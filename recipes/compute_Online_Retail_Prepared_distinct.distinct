@@ -1,0 +1,128 @@
+{
+  "preFilter": {
+    "distinct": false,
+    "enabled": false
+  },
+  "keys": [
+    {
+      "column": "customerid"
+    },
+    {
+      "column": "InvoiceNo"
+    },
+    {
+      "column": "stock_code"
+    },
+    {
+      "column": "description"
+    },
+    {
+      "column": "quantity"
+    },
+    {
+      "column": "InvoiceDate"
+    },
+    {
+      "column": "week_of"
+    },
+    {
+      "column": "year"
+    },
+    {
+      "column": "unitprice"
+    },
+    {
+      "column": "Country"
+    }
+  ],
+  "globalCount": false,
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVESERVER2"
+    },
+    "sqlPipelineParams": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "containerSelection": {
+      "containerMode": "INHERIT"
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "skipPrerunValidate": false,
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": false,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "mode": "AUTO",
+        "autoModeRepartitionInto": 10,
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "outputColumnNameOverrides": {},
+  "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "customerid",
+            "type": "bigint"
+          },
+          {
+            "name": "InvoiceNo",
+            "type": "string"
+          },
+          {
+            "name": "stock_code",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "quantity",
+            "type": "bigint"
+          },
+          {
+            "name": "InvoiceDate",
+            "type": "string"
+          },
+          {
+            "name": "week_of",
+            "type": "date"
+          },
+          {
+            "name": "year",
+            "type": "bigint"
+          },
+          {
+            "name": "unitprice",
+            "type": "double"
+          },
+          {
+            "name": "Country",
+            "type": "string"
+          }
+        ],
+        "userModified": false
+      }
+    },
+    "distinct": false,
+    "enabled": false
+  }
+}

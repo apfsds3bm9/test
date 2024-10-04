@@ -1,0 +1,116 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "fullSampleStatistics": {
+      "engineConfig": {
+        "padRunsWithMetrics": false,
+        "hive": {
+          "active": true,
+          "extraConf": []
+        },
+        "basic": {},
+        "dss": {
+          "active": true,
+          "selection": {
+            "useMemTable": false,
+            "filter": {
+              "distinct": false,
+              "enabled": false
+            },
+            "partitionSelectionMethod": "ALL",
+            "latestPartitionsN": 1,
+            "ordering": {
+              "enabled": false,
+              "rules": []
+            },
+            "samplingMethod": "FULL",
+            "maxRecords": -1,
+            "targetRatio": 0.02,
+            "withinFirstN": -1,
+            "maxReadUncompressedBytes": -1
+          }
+        },
+        "sql": {
+          "active": true
+        },
+        "impala": {
+          "active": true
+        },
+        "spark": {
+          "active": true,
+          "extraConf": []
+        },
+        "python": {}
+      },
+      "basic": true,
+      "countDistinct": true,
+      "advanced": true,
+      "percentile": false,
+      "validity": false,
+      "updateOnAnalyzeBoxOpen": false,
+      "computeCostFreeMetrics": false,
+      "numberTopValues": 10
+    },
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "customerid": 100,
+      "product_description": 300,
+      "week": 183,
+      "quantity": 100,
+      "stock_code": 100,
+      "description": 260,
+      "week_of": 183,
+      "year": 100,
+      "total_revenue": 113
+    },
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [
+      {
+        "column": "week",
+        "ascending": true
+      }
+    ],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 1.0,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 3
+    },
+    "vizSampling": {
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": []
+}

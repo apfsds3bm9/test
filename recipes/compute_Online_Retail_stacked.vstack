@@ -1,0 +1,115 @@
+{
+  "mode": "FROM_INDEX",
+  "selectedColumns": [
+    "InvoiceNo",
+    "StockCode",
+    "Description",
+    "Quantity",
+    "InvoiceDate",
+    "UnitPrice",
+    "CustomerID",
+    "Country"
+  ],
+  "originColumnName": "original_dataset",
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVESERVER2"
+    },
+    "sqlPipelineParams": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "skipPrerunValidate": false,
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": false,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "mode": "AUTO",
+        "autoModeRepartitionInto": 10,
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "virtualInputs": [
+    {
+      "preFilter": {},
+      "originLabel": "Online_Retail_I",
+      "index": 0
+    },
+    {
+      "preFilter": {},
+      "originLabel": "Online_Retail_II",
+      "index": 1
+    }
+  ],
+  "copySchemaFromDatasetWithName": "Online_Retail",
+  "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "InvoiceNo",
+            "type": "string"
+          },
+          {
+            "name": "StockCode",
+            "type": "string"
+          },
+          {
+            "name": "Description",
+            "type": "string"
+          },
+          {
+            "name": "Quantity",
+            "type": "string"
+          },
+          {
+            "name": "InvoiceDate",
+            "type": "string"
+          },
+          {
+            "name": "UnitPrice",
+            "type": "string"
+          },
+          {
+            "name": "CustomerID",
+            "type": "string"
+          },
+          {
+            "name": "Country",
+            "type": "string"
+          }
+        ],
+        "userModified": false
+      }
+    },
+    "distinct": false,
+    "enabled": false
+  },
+  "selectedColumnsIndexes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "addOriginColumn": false
+}

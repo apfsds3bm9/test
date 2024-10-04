@@ -1,0 +1,34 @@
+{
+  "tags": {
+    "adv designer cert": {
+      "color": "#90a8b7"
+    },
+    "within_dss:Advanced Designer": {},
+    "Customer-Centric-Flow": {
+      "color": "#00a55a"
+    },
+    "section:Advanced Designer": {},
+    "Skeleton Project": {
+      "color": "#123883"
+    },
+    "duplicated": {
+      "color": "#3A85AD"
+    },
+    "exam": {},
+    "Part Skeleton Project": {
+      "color": "#FFD83D"
+    },
+    "downloads": {},
+    "Product-Centric-Flow": {
+      "color": "#77bec2"
+    },
+    "imported": {
+      "color": "#263238"
+    },
+    "likely_not": {
+      "color": "#d66b9b"
+    },
+    "tutorial": {},
+    "academy": {}
+  }
+}

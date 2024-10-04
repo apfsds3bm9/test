@@ -1,0 +1,346 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 2,
+    "selection": {
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "maxRecordsForDisplay": -1,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "maxStoredBytes": 104857600,
+      "ascending": true,
+      "timeout": -1,
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "partitionSelectionMethod": "ALL",
+      "targetRatio": 1.0,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL"
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [],
+  "columnUseScientificNotationByName": {},
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "name": "Date Processing",
+      "metaType": "GROUP",
+      "disabled": false,
+      "steps": [
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "DateParser",
+          "params": {
+            "outCol": "InvoiceDate",
+            "formats": [
+              "MM/dd/yy HH:mm"
+            ],
+            "columns": [
+              "InvoiceDate"
+            ],
+            "timezone_id": "UTC",
+            "appliesTo": "SINGLE_COLUMN",
+            "lang": "auto"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "comment": "Truncating Invoice Date to the week level",
+          "type": "CreateColumnWithGREL",
+          "params": {
+            "expression": "trunc(InvoiceDate, \u0027week\u0027)",
+            "column": "week_of"
+          },
+          "alwaysShowComment": true
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "DateComponentsExtractor",
+          "params": {
+            "outMonthColumn": "",
+            "outYearColumn": "year",
+            "column": "week_of",
+            "timezone_id": "UTC",
+            "outDayColumn": ""
+          },
+          "alwaysShowComment": false
+        }
+      ],
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "mainColor": "#ff9c00",
+      "name": "Wrangling",
+      "metaType": "GROUP",
+      "disabled": false,
+      "steps": [
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "comment": "Invoices starting with \u0027C\u0027 indicate cancelled orders",
+          "type": "FilterOnBadType",
+          "params": {
+            "booleanMode": "AND",
+            "columns": [
+              "InvoiceNo"
+            ],
+            "action": "REMOVE_ROW",
+            "appliesTo": "SINGLE_COLUMN",
+            "type": "LongMeaning"
+          },
+          "alwaysShowComment": true
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "FilterOnNumericalRange",
+          "params": {
+            "min": 0.0,
+            "booleanMode": "AND",
+            "columns": [
+              "Quantity"
+            ],
+            "action": "KEEP_ROW",
+            "appliesTo": "SINGLE_COLUMN"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "FilterOnValue",
+          "params": {
+            "normalizationMode": "EXACT",
+            "booleanMode": "AND",
+            "columns": [
+              "Country"
+            ],
+            "values": [
+              "United Kingdom"
+            ],
+            "matchingMode": "FULL_STRING",
+            "action": "KEEP_ROW",
+            "appliesTo": "SINGLE_COLUMN",
+            "exclude": false,
+            "processNullOrEmptyValues": false
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "RemoveRowsOnEmpty",
+          "params": {
+            "columns": [
+              "CustomerID"
+            ],
+            "keep": false,
+            "appliesTo": "SINGLE_COLUMN"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "TextSimplifierProcessor",
+          "params": {
+            "inCol": "Description",
+            "sortAlphabetically": false,
+            "normalize": true,
+            "language": "english",
+            "clearStopWords": false,
+            "stem": false
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "StringTransformer",
+          "params": {
+            "mode": "CAPITALIZE_FULLY",
+            "columns": [
+              "Description"
+            ],
+            "appliesTo": "SINGLE_COLUMN",
+            "truncate_limit": 0
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "StringTransformer",
+          "params": {
+            "mode": "TRIM",
+            "columns": [
+              "Description",
+              "StockCode"
+            ],
+            "appliesTo": "COLUMNS",
+            "truncate_limit": 0
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "ColumnRenamer",
+          "params": {
+            "renamings": [
+              {
+                "from": "CustomerID",
+                "to": "customerid"
+              },
+              {
+                "from": "Quantity",
+                "to": "quantity"
+              },
+              {
+                "from": "StockCode",
+                "to": "stock_code"
+              },
+              {
+                "from": "Description",
+                "to": "description"
+              },
+              {
+                "from": "UnitPrice",
+                "to": "unitprice"
+              }
+            ]
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "ColumnReorder",
+          "params": {
+            "columns": [
+              "customerid"
+            ],
+            "reorderAction": "AT_START",
+            "appliesTo": "SINGLE_COLUMN"
+          },
+          "alwaysShowComment": false
+        },
+        {
+          "preview": false,
+          "mainColor": "#90d931",
+          "metaType": "PROCESSOR",
+          "disabled": false,
+          "type": "CreateColumnWithGREL",
+          "params": {
+            "expression": "\"unitprice - (unitprice * variable)\"",
+            "column": "discount_price"
+          },
+          "alwaysShowComment": false,
+          "secondaryColor": "#deeccb"
+        }
+      ],
+      "alwaysShowComment": false,
+      "secondaryColor": "#f4e0c1"
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "useMemTable": false,
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": -1,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "FULL",
+      "ascending": true
+    },
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "InvoiceDate_parsed": 183,
+    "Description": 260,
+    "week": 183,
+    "year": 100,
+    "discount_price": 253,
+    "description": 260,
+    "CustomerID": 100,
+    "unitprice": 100,
+    "InvoiceDate_day": 128,
+    "found": 100,
+    "week_of_day": 100,
+    "InvoiceDate": 174,
+    "product_description": 300,
+    "stock_code": 100,
+    "week_of_year": 105,
+    "stockcode": 100,
+    "week_of": 183,
+    "quantity": 100,
+    "InvoiceDate_month": 143,
+    "newcolumn_expression": 300,
+    "Quantity": 100,
+    "InvoiceNo": 113,
+    "InvoiceDate_year": 135,
+    "1": 100,
+    "2": 100,
+    "UnitPrice": 100,
+    "3": 100,
+    "total_revenue": 113,
+    "customerid": 100,
+    "Country": 113,
+    "StockCode": 100,
+    "week_of_month": 113,
+    "invoicedate": 183,
+    "Stock": 100
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH",
+    "individualColumnsRules": []
+  }
+}

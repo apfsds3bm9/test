@@ -1,0 +1,38 @@
+{
+  "checklists": {
+    "checklists": []
+  },
+  "creationTag": {
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1605864413655,
+    "versionNumber": 0
+  },
+  "customFields": {},
+  "listed": true,
+  "name": "Online-Retail's default dashboard",
+  "owner": "admin",
+  "pages": [
+    {
+      "enableCrossFilters": true,
+      "filtersParams": {
+        "panelPosition": "TOP"
+      },
+      "grid": {
+        "tiles": []
+      },
+      "id": "E18IFmA",
+      "showTitle": false
+    }
+  ],
+  "showGrid": true,
+  "tags": [],
+  "versionTag": {
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1605864413655,
+    "versionNumber": 0
+  }
+}
