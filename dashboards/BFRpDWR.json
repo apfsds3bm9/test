@@ -1,0 +1,41 @@
+{
+  "checklists": {
+    "checklists": []
+  },
+  "creationTag": {
+    "extendedProperties": {},
+    "lastModifiedBy": {
+      "login": "sean"
+    },
+    "lastModifiedOn": 1687364509912,
+    "versionNumber": 0
+  },
+  "customFields": {},
+  "listed": true,
+  "name": "Project dashboard",
+  "owner": "sean",
+  "pages": [
+    {
+      "enableCrossFilters": true,
+      "filtersParams": {
+        "panelPosition": "TOP"
+      },
+      "grid": {
+        "tiles": []
+      },
+      "id": "gDbLTSr",
+      "showTitle": false,
+      "title": "Model Report"
+    }
+  ],
+  "showGrid": true,
+  "tags": [],
+  "versionTag": {
+    "extendedProperties": {},
+    "lastModifiedBy": {
+      "login": "sean"
+    },
+    "lastModifiedOn": 1690318894715,
+    "versionNumber": 18
+  }
+}

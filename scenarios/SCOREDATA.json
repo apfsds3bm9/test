@@ -1,0 +1,103 @@
+{
+  "type": "step_based",
+  "name": "Score Data",
+  "active": false,
+  "runAsUser": "admin",
+  "creationTag": {
+    "versionNumber": 2,
+    "lastModifiedBy": {
+      "login": "sean"
+    },
+    "lastModifiedOn": 1690318458315,
+    "extendedProperties": {}
+  },
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [],
+  "triggers": [
+    {
+      "id": "LjOVe8sa",
+      "type": "temporal",
+      "name": "Weekly",
+      "delay": 5,
+      "active": true,
+      "params": {
+        "repeatFrequency": 1,
+        "frequency": "Weekly",
+        "startingFrom": "2023-07-01",
+        "daysOfWeek": [
+          "Sunday"
+        ],
+        "minute": 0,
+        "hour": 2,
+        "timezone": "SERVER",
+        "lastUpdate": 1690318458315
+      }
+    }
+  ],
+  "reporters": [],
+  "params": {
+    "steps": [
+      {
+        "id": "comp_metrics_d_job_postings",
+        "type": "compute_metrics",
+        "name": "Metrics on job_postings",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "computes": [
+            {
+              "type": "DATASET",
+              "itemId": "job_postings",
+              "partitionsSpec": ""
+            }
+          ],
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "check_WARNING_d_job_postings",
+        "type": "check_dataset",
+        "name": "Checks on job_postings",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "checks": [
+            {
+              "type": "DATASET",
+              "itemId": "job_postings",
+              "partitionsSpec": ""
+            }
+          ],
+          "handleWarningsAs": "WARNING",
+          "computeAutomaticRules": true,
+          "ignorePartitionSelectionMode": true,
+          "proceedOnFailure": false
+        }
+      }
+    ]
+  },
+  "automationLocal": false,
+  "customFields": {},
+  "markedAsTest": false
+}
