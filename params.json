@@ -139,7 +139,8 @@
     },
     "dkuProperties": []
   },
-  "name": "Advanced Designer Assessment",
+  "name": "Advanced Designer Assessment for thinh pham",
+  "projectStatus": "Sandbox",
   "imgPattern": 7,
   "showInitials": false,
   "metrics": {
