@@ -15,7 +15,8 @@
   "additionalDashboardUsers": {
     "users": []
   },
-  "tutorialProject": false,
+  "tutorialProject": true,
+  "tutorialId": "QS_DEVELOPERS",
   "settings": {
     "flowAnchorSourcesAndSinks": true,
     "flowDisplaySettings": {
@@ -24,6 +25,7 @@
       "zonesGraphForJobs": true
     },
     "gitCommitMode": "ALL_EXPLICIT",
+    "useRemoteGit": true,
     "disableAutomaticTriggers": false,
     "integrations": {
       "integrations": []
@@ -138,7 +140,8 @@
     },
     "dkuProperties": []
   },
-  "name": "Developers Quick Start",
+  "name": "Developers Quick Start for thinh pham",
+  "projectStatus": "Sandbox",
   "imgPattern": 5,
   "showInitials": false,
   "metrics": {
