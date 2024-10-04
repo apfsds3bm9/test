@@ -3,14 +3,6 @@
   "name": "Score Data",
   "active": false,
   "runAsUser": "admin",
-  "creationTag": {
-    "versionNumber": 2,
-    "lastModifiedBy": {
-      "login": "sean"
-    },
-    "lastModifiedOn": 1690318458315,
-    "extendedProperties": {}
-  },
   "checklists": {
     "checklists": []
   },
