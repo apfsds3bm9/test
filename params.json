@@ -63,7 +63,7 @@
     "users": []
   },
   "tutorialProject": true,
-  "tutorialId": "QS_MLOPS",
+  "tutorialId": "QS_ML",
   "settings": {
     "flowAnchorSourcesAndSinks": true,
     "flowDisplaySettings": {
@@ -186,7 +186,8 @@
     },
     "dkuProperties": []
   },
-  "name": "Machine Learning Quick Start",
+  "name": "Machine Learning Quick Start for thinh pham",
+  "projectStatus": "Sandbox",
   "imgPattern": 4,
   "showInitials": false,
   "metrics": {
