@@ -63,7 +63,7 @@
     "users": []
   },
   "tutorialProject": true,
-  "tutorialId": "QS_MLOPS",
+  "tutorialId": "QS_AI_COLLAB",
   "settings": {
     "flowAnchorSourcesAndSinks": true,
     "flowDisplaySettings": {
@@ -186,7 +186,8 @@
     },
     "dkuProperties": []
   },
-  "name": "AI Collaboration Quick Start",
+  "name": "AI Collaboration Quick Start for thinh pham",
+  "projectStatus": "Sandbox",
   "imgPattern": 4,
   "showInitials": false,
   "metrics": {
