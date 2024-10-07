@@ -1,6 +1,6 @@
 {
   "dashboardAuthorizations": {
-    "allAuthorized": false,
+    "allAuthorized": true,
     "authorizations": [
       {
         "objectRef": {
@@ -17,16 +17,8 @@
           "objectType": "DATASET"
         },
         "modes": [
-          "READ"
-        ]
-      },
-      {
-        "objectRef": {
-          "objectId": "DATAMONITORING",
-          "objectType": "SCENARIO"
-        },
-        "modes": [
-          "RUN"
+          "READ",
+          "DISCOVER"
         ]
       },
       {
