@@ -86,7 +86,26 @@
     }
   },
   "schema": {
-    "columns": [],
+    "columns": [
+      {"name":"REF_DATE","type":"string"},
+      {"name":"GEO","type":"string"},
+      {"name":"DGUID","type":"string"},
+      {"name":"Vehicle type","type":"string"},
+      {"name":"Origin of manufacture","type":"string"},
+      {"name":"Sales","type":"string"},
+      {"name":"Seasonal adjustment","type":"string"},
+      {"name":"UOM","type":"string"},
+      {"name":"UOM_ID","type":"string"},
+      {"name":"SCALAR_FACTOR","type":"string"},
+      {"name":"SCALAR_ID","type":"string"},
+      {"name":"VECTOR","type":"string"},
+      {"name":"COORDINATE","type":"string"},
+      {"name":"VALUE","type":"string"},
+      {"name":"STATUS","type":"string"},
+      {"name":"SYMBOL","type":"string"},
+      {"name":"TERMINATED","type":"string"},
+      {"name":"DECIMALS","type":"string"}
+    ],
     "userModified": true
   },
   "dkuProperties": [],
