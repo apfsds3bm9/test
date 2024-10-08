@@ -180,7 +180,6 @@
     "dkuProperties": []
   },
   "name": "Met_Vai_Noi",
-  "projectStatus": "Sandbox",
   "imgPattern": 4,
   "showInitials": false,
   "metrics": {
@@ -252,7 +251,8 @@
     "academy",
     "tutorial",
     "downloads",
-    "section:Quick Starts"
+    "section:Quick Starts",
+    "duplicated"
   ],
   "customFields": {
     "gdpr_forbid_dataset_sharing": false,
