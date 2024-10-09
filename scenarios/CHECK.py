@@ -11,7 +11,7 @@ for i in range(2):
     s = Scenario()
     # Khởi tạo bước xây dựng
     step = BuildFlowItemsStepDefHelper("Data Preparation")
-    step.add_dataset("job_postings_prepared", "QS_MLOPS_2")
+    step.add_dataset("earnings_by_education", "QS_MLOPS_2")
     step.add_dataset("job_postings_python", "QS_MLOPS_2")
 
     # Chạy bước này
