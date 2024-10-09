@@ -2,7 +2,7 @@
   "type": "step_based",
   "name": "Sales Tracking",
   "active": false,
-  "runAsUser": "thinhprovc202@gmail.com",
+  "runAsUser": "quangcm2508@gmail.com",
   "checklists": {
     "checklists": []
   },
@@ -20,6 +20,7 @@
         "id": "check_consistency",
         "type": "check_consistency",
         "name": "Step #1",
+        "enabled": true,
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
@@ -38,6 +39,7 @@
         "id": "comp_metrics_d_Online_Retail_Prepared",
         "type": "compute_metrics",
         "name": "Step #2",
+        "enabled": true,
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
@@ -62,6 +64,7 @@
         "id": "build_0_true_d_Product_Aggregated_2",
         "type": "build_flowitem",
         "name": "Step #4",
+        "enabled": true,
         "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
