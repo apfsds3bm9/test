@@ -3,17 +3,35 @@
     "duplicated": {
       "color": "#3A85AD"
     },
-    "section:Quick Starts": {},
-    "starter": {},
-    "downloads": {},
+    "section:Quick Starts": {
+      "color": "#94be8e"
+    },
+    "starter": {
+      "color": "#28aadd"
+    },
+    "downloads": {
+      "color": "#de1ea5"
+    },
     "imported": {
       "color": "#263238"
     },
-    "tutorial": {},
-    "complete": {},
-    "section:Quick Start": {},
-    "academy": {},
-    "gallery": {},
-    "recipe-editor": {}
+    "recipe-editor": {
+      "color": "#1ac2ab"
+    },
+    "tutorial": {
+      "color": "#FFD83D"
+    },
+    "complete": {
+      "color": "#a088bd"
+    },
+    "section:Quick Start": {
+      "color": "#00a55a"
+    },
+    "academy": {
+      "color": "#d66b9b"
+    },
+    "gallery": {
+      "color": "#FFD83D"
+    }
   }
 }
