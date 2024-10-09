@@ -2,14 +2,7 @@
   "type": "custom_python",
   "name": "123",
   "active": false,
-  "creationTag": {
-    "versionNumber": 0,
-    "lastModifiedBy": {
-      "login": "thinhprovc202@gmail.com"
-    },
-    "lastModifiedOn": 1728443717342,
-    "extendedProperties": {}
-  },
+  "runAsUser": "thinhprovc202@gmail.com",
   "checklists": {
     "checklists": []
   },
@@ -23,7 +16,8 @@
   "reporters": [],
   "params": {
     "envSelection": {
-      "envMode": "INHERIT"
+      "envMode": "EXPLICIT_ENV",
+      "envName": "datascience"
     }
   },
   "automationLocal": false,
