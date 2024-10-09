@@ -42,8 +42,13 @@
   },
   "rank": false,
   "denseRank": false,
-  "orders": [],
-  "rowNumber": false,
+  "orders": [
+    {
+      "column": "ShapeId",
+      "desc": false
+    }
+  ],
+  "rowNumber": true,
   "outputColumnNameOverrides": {},
   "computedColumns": []
 }
