@@ -70,9 +70,28 @@
   },
   "tags": [],
   "params": {
-    "uploadBoxId": "d7c7180086329240917279879c6b33abd0a8a839cd284fa0bb6aae7f3ec98d59",
-    "uploadConnection": "dataiku-managed-storage",
     "uploadFSProviderType": "S3",
+    "uploadedConfig": {
+      "bucket": "gis-data-ap-southeast-1",
+      "metastoreSynchronizationEnabled": true,
+      "metastoreDatabaseName": "default",
+      "metastoreTableName": "${projectKey}_Meta",
+      "connection": "dataiku-managed-storage",
+      "path": "/managed-dss-data/uploads/${projectKey}/Meta",
+      "notReadyIfEmpty": false,
+      "filesSelectionRules": {
+        "mode": "ALL",
+        "excludeRules": [],
+        "includeRules": [],
+        "explicitFiles": []
+      },
+      "variablesExpansionLoopConfig": {
+        "enabled": false,
+        "mode": "CREATE_VARIABLE_FOR_EACH_COLUMN",
+        "replacements": []
+      }
+    },
+    "connection": "dataiku-managed-storage",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
       "mode": "ALL",
