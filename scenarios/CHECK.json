@@ -2,14 +2,6 @@
   "type": "custom_python",
   "name": "Check",
   "active": false,
-  "creationTag": {
-    "versionNumber": 0,
-    "lastModifiedBy": {
-      "login": "thinhprovc202@gmail.com"
-    },
-    "lastModifiedOn": 1728443496287,
-    "extendedProperties": {}
-  },
   "checklists": {
     "checklists": []
   },
