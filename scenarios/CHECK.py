@@ -15,4 +15,7 @@ for i in range(2):
     step.add_dataset("job_postings_python", "QS_MLOPS_2")
 
     # Chạy bước này
-    s.run_step(step.get_step())
+    try:
+        s.run_step(step.get_step())
+    except Exception as e:
+        print(f"Step {i+1} gặp lỗi: {str(e)}")
