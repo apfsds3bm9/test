@@ -29,7 +29,7 @@
         "minute": 0,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1728457610419
+        "lastUpdate": 1728458140740
       }
     }
   ],
@@ -79,7 +79,7 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 1,
         "params": {
-          "script": "from dataiku.scenario import Scenario, BuildFlowItemsStepDefHelper\nimport dataiku\n\n# Lấy danh sách tất cả các project\nclient \u003d dataiku.api_client()\nproject_keys \u003d client.list_projects()\n# Lấy key của từng project\nz \u003d [project[\u0027projectKey\u0027] for project in project_keys]\n# Handling our scenario.\ns \u003d Scenario()\n# Khởi tạo bước xây dựng\nfor i in range(5):\n    step \u003d BuildFlowItemsStepDefHelper(\"Machine Learning\")\n    step.add_dataset(\"job_postings_prepared_joined\", \"QS_MLOPS_2\")\n    step.add_dataset(\"train\", \"QS_MLOPS_2\")\n    step.add_dataset(\"test\", \"QS_MLOPS_2\")\n    # Chạy bước này\n    try:\n        s.run_step(step.get_step())\n    except Exception as e:\n        print(f\"Step {i+1} gặp lỗi: {str(e)}\")",
+          "script": "from dataiku.scenario import Scenario, BuildFlowItemsStepDefHelper\nimport dataiku\n\n# Lấy danh sách tất cả các project\nclient \u003d dataiku.api_client()\nproject_keys \u003d client.list_projects()\n# Lấy key của từng project\nz \u003d [project[\u0027projectKey\u0027] for project in project_keys]\n# Handling our scenario.\ns \u003d Scenario()\n# Khởi tạo bước xây dựng\nfor i in range(5):\n    step \u003d BuildFlowItemsStepDefHelper(\"Machine Learning\")\n    step.add_dataset(\"job_postings\", \"QS_MLOPS_2\")\n    step.add_dataset(\"job_postings_prepared\", \"QS_MLOPS_2\")\n    step.add_dataset(\"job_postings_prepared_joined\", \"QS_MLOPS_2\")\n    step.add_dataset(\"train\", \"QS_MLOPS_2\")\n    step.add_dataset(\"test\", \"QS_MLOPS_2\")\n    # Chạy bước này\n    try:\n        s.run_step(step.get_step())\n    except Exception as e:\n        print(f\"Step {i+1} gặp lỗi: {str(e)}\")",
           "envSelection": {
             "envMode": "EXPLICIT_ENV",
             "envName": "time_series"
