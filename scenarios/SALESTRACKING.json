@@ -2,7 +2,7 @@
   "type": "step_based",
   "name": "Sales Tracking",
   "active": false,
-  "runAsUser": "admin",
+  "runAsUser": "thinhprovc202@gmail.com",
   "checklists": {
     "checklists": []
   },
