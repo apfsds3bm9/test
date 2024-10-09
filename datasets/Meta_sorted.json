@@ -71,7 +71,8 @@
       {"name":"ClassId","type":"string"},
       {"name":"ShapeId","type":"string"},
       {"name":"ColorId","type":"string"},
-      {"name":"SignId","type":"string"}
+      {"name":"SignId","type":"string"},
+      {"name":"_row_number","type":"bigint"}
     ],
     "userModified": true
   },
