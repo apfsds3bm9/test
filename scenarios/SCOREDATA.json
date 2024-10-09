@@ -29,7 +29,7 @@
         "minute": 0,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1728442759369
+        "lastUpdate": 1728442775320
       }
     }
   ],
@@ -83,7 +83,7 @@
           "envSelection": {
             "envMode": "INHERIT"
           },
-          "proceedOnFailure": false
+          "proceedOnFailure": true
         }
       }
     ]
