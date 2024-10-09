@@ -29,7 +29,7 @@
         "minute": 0,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1728442651463
+        "lastUpdate": 1728442759369
       }
     }
   ],
@@ -53,7 +53,7 @@
           "builds": [
             {
               "type": "DATASET",
-              "itemId": "test_scored",
+              "itemId": "job_postings_prepared_joined",
               "partitionsSpec": ""
             }
           ],
