@@ -186,7 +186,8 @@
     },
     "dkuProperties": []
   },
-  "name": "MLOps Quick Start",
+  "name": "MLOps Quick Start for thinhprovc202",
+  "projectStatus": "Sandbox",
   "imgPattern": 4,
   "showInitials": false,
   "metrics": {
