@@ -29,7 +29,7 @@
         "minute": 0,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1728442562585
+        "lastUpdate": 1728442632277
       }
     }
   ],
@@ -79,7 +79,7 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "script": "from dataiku.scenario import Scenario, BuildFlowItemsStepDefHelper\nimport dataiku\n\n# Lấy danh sách tất cả các project\nclient \u003d dataiku.api_client()\nproject_keys \u003d client.list_projects()\n# Lấy key của từng project\nz \u003d [project[\u0027projectKey\u0027] for project in project_keys]\n# Handling our scenario.\nfor i in range(2):\n    s \u003d Scenario()\n\n    # Get the trigger type\n    trigger_type \u003d s.get_trigger_type()\n    # trigger_var is now the name of the variable across the scenario\n    # and can be changed at your convenience.\n    s.set_scenario_variables(trigger_var \u003d trigger_type)\n    # Khởi tạo bước xây dựng\n    step \u003d BuildFlowItemsStepDefHelper(\"Data Preparation\")\n    step.add_dataset(\"job_postings_prepared\", z[4])\n    step.add_dataset(\"job_postings_python\", z[4])\n\n    # Chạy bước này\n    s.run_step(step.get_step())\n\n",
+          "script": "from dataiku.scenario import Scenario, BuildFlowItemsStepDefHelper\nimport dataiku\n\n# Lấy danh sách tất cả các project\nclient \u003d dataiku.api_client()\nproject_keys \u003d client.list_projects()\n# Lấy key của từng project\nz \u003d [project[\u0027projectKey\u0027] for project in project_keys]\n# Handling our scenario.\nfor i in range(2):\n    s \u003d Scenario()\n\n    # Get the trigger type\n    trigger_type \u003d s.get_trigger_type()\n    # trigger_var is now the name of the variable across the scenario\n    # and can be changed at your convenience.\n    s.set_scenario_variables(trigger_var \u003d trigger_type)\n    # Khởi tạo bước xây dựng\n    step \u003d BuildFlowItemsStepDefHelper(\"Data Preparation\")\n    step.add_dataset(\"job_postings_prepared\", z[-1])\n    step.add_dataset(\"job_postings_python\", z[-1])\n\n    # Chạy bước này\n    s.run_step(step.get_step())\n\n",
           "envSelection": {
             "envMode": "INHERIT"
           },
