@@ -1,0 +1,126 @@
+{
+  "checklists": {
+    "checklists": []
+  },
+  "creationTag": {
+    "extendedProperties": {},
+    "lastModifiedBy": {
+      "login": "sean"
+    },
+    "lastModifiedOn": 1687364509912,
+    "versionNumber": 0
+  },
+  "customFields": {},
+  "listed": true,
+  "name": "Project dashboard",
+  "owner": "sean",
+  "pages": [
+    {
+      "enableCrossFilters": true,
+      "filtersParams": {
+        "panelPosition": "TOP"
+      },
+      "grid": {
+        "tiles": [
+          {
+            "autoLoad": true,
+            "borderOptions": {
+              "color": "#D9D9D9",
+              "radius": 0,
+              "size": 1
+            },
+            "box": {
+              "height": 7,
+              "left": 0,
+              "top": 0,
+              "width": 6
+            },
+            "clickAction": "DO_NOTHING",
+            "displayMode": "INSIGHT",
+            "insightId": "KTqWbnM",
+            "insightType": "saved-model_report",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "advancedOptions": {
+                "featureImportance": {
+                  "graphType": "absoluteFeatureImportance",
+                  "importanceDisplayMode": "globalExplanations"
+                },
+                "interactiveScoring": {
+                  "featuresOrder": [
+                    "len_company_profile",
+                    "has_company_logo",
+                    "country"
+                  ]
+                }
+              },
+              "displayMode": "summary"
+            },
+            "tileType": "INSIGHT",
+            "titleOptions": {
+              "fontColor": "#000",
+              "fontSize": 13,
+              "showTitle": "YES"
+            }
+          },
+          {
+            "autoLoad": true,
+            "borderOptions": {
+              "color": "#D9D9D9",
+              "radius": 0,
+              "size": 1
+            },
+            "box": {
+              "height": 7,
+              "left": 6,
+              "top": 0,
+              "width": 6
+            },
+            "clickAction": "DO_NOTHING",
+            "displayMode": "INSIGHT",
+            "insightId": "Z9iKQL8",
+            "insightType": "saved-model_report",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "advancedOptions": {
+                "featureImportance": {
+                  "graphType": "absoluteFeatureImportance",
+                  "importanceDisplayMode": "globalExplanations"
+                },
+                "interactiveScoring": {
+                  "featuresOrder": [
+                    "len_company_profile",
+                    "has_company_logo",
+                    "country"
+                  ]
+                }
+              },
+              "displayMode": "bc_confusion"
+            },
+            "tileType": "INSIGHT",
+            "titleOptions": {
+              "fontColor": "#000",
+              "fontSize": 13,
+              "showTitle": "YES"
+            }
+          }
+        ]
+      },
+      "id": "gDbLTSr",
+      "showTitle": false,
+      "title": "Model Report"
+    }
+  ],
+  "showGrid": true,
+  "tags": [],
+  "versionTag": {
+    "extendedProperties": {},
+    "lastModifiedBy": {
+      "login": "sean"
+    },
+    "lastModifiedOn": 1690318085176,
+    "versionNumber": 17
+  }
+}
