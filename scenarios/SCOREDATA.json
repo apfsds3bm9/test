@@ -29,7 +29,7 @@
         "minute": 0,
         "hour": 2,
         "timezone": "SERVER",
-        "lastUpdate": 1728457284059
+        "lastUpdate": 1728457432314
       }
     }
   ],
@@ -63,6 +63,28 @@
           "refreshHiveMetastore": true,
           "handleWarningsAs": "WARNING",
           "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "custom_python_P6WAl33FM32yGw0pZdte8A",
+        "type": "custom_python",
+        "name": "Step #2",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 1,
+        "params": {
+          "script": "from dataiku.scenario import Scenario, BuildFlowItemsStepDefHelper\nimport dataiku\n\n# Lấy danh sách tất cả các project\nclient \u003d dataiku.api_client()\nproject_keys \u003d client.list_projects()\n# Lấy key của từng project\nz \u003d [project[\u0027projectKey\u0027] for project in project_keys]\n# Handling our scenario.\ns \u003d Scenario()\n# Khởi tạo bước xây dựng\nstep \u003d BuildFlowItemsStepDefHelper(\"Machine Learning\")\nstep.add_dataset(\"job_postings_prepared_joined\", \"QS_MLOPS_2\")\nstep.add_dataset(\"train\", \"QS_MLOPS_2\")\nstep.add_dataset(\"test\", \"QS_MLOPS_2\")\n# Chạy bước này\ntry:\n    s.run_step(step.get_step())\nexcept Exception as e:\n    print(f\"Step {i+1} gặp lỗi: {str(e)}\")",
+          "envSelection": {
+            "envMode": "EXPLICIT_ENV",
+            "envName": "time_series"
+          },
+          "proceedOnFailure": true
         }
       }
     ]
