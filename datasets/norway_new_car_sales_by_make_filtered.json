@@ -86,7 +86,7 @@
     "metastoreDatabaseName": "default",
     "metastoreTableName": "${projectKey}_norway_new_car_sales_by_make_filtered",
     "connection": "dataiku-managed-storage",
-    "path": "/managed-dss-data/TASKCHUAVAI/norway_new_car_sales_by_make_filtered/",
+    "path": "/managed-dss-data/TASKCHUAVAI/norway_new_car_sales_by_make_filtered/2009/out-s0.csv/",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
       "mode": "ALL",
