@@ -95,7 +95,12 @@
       {"name":"Month","type":"string"},
       {"name":"Make","type":"string"},
       {"name":"Quantity","type":"string"},
-      {"name":"Pct","type":"string"}
+      {"name":"Pct","type":"string"},
+      {"name":"Year_max","type":"string"},
+      {"name":"Year_count","type":"bigint"},
+      {"name":"Month_concat","type":"string"},
+      {"name":"Month_lag","type":"string"},
+      {"name":"Make_count","type":"bigint"}
     ],
     "userModified": true
   },
