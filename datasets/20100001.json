@@ -120,7 +120,7 @@
       {"name":"SCALAR_ID","type":"int"},
       {"name":"VECTOR","type":"string"},
       {"name":"COORDINATE","type":"string"},
-      {"name":"VALUE","type":"string"},
+      {"name":"VALUE","type":"int"},
       {"name":"STATUS","type":"string"},
       {"name":"SYMBOL","type":"string"},
       {"name":"TERMINATED","type":"string"},
