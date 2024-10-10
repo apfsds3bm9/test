@@ -5,17 +5,20 @@
   },
   "ntileValues": "10",
   "retrievedColumnsSelectionMode": "ALL",
+  "keys": [],
   "values": [
     {
       "last": false,
       "lagDiff": false,
-      "max": false,
+      "max": true,
       "firstLastNotNull": false,
       "column": "Year",
       "count": false,
+      "$idx": 0,
       "lagValues": "1",
       "sum": false,
       "concat": false,
+      "type": "int",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
@@ -24,6 +27,7 @@
       "avg": false,
       "lag": false,
       "leadValues": "1",
+      "$selected": false,
       "stddev": false,
       "value": true,
       "leadDiff": false,
@@ -36,17 +40,20 @@
       "firstLastNotNull": false,
       "column": "Month",
       "count": false,
+      "$idx": 1,
       "lagValues": "1",
       "sum": false,
       "concat": false,
+      "type": "int",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
       "min": false,
       "countDistinct": false,
-      "avg": false,
+      "avg": true,
       "lag": false,
       "leadValues": "1",
+      "$selected": false,
       "stddev": false,
       "value": true,
       "leadDiff": false,
@@ -58,10 +65,12 @@
       "max": false,
       "firstLastNotNull": false,
       "column": "Make",
-      "count": false,
+      "count": true,
+      "$idx": 2,
       "lagValues": "1",
       "sum": false,
       "concat": false,
+      "type": "string",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
@@ -70,6 +79,7 @@
       "avg": false,
       "lag": false,
       "leadValues": "1",
+      "$selected": false,
       "stddev": false,
       "value": true,
       "leadDiff": false,
@@ -78,13 +88,15 @@
     {
       "last": false,
       "lagDiff": false,
-      "max": false,
+      "max": true,
       "firstLastNotNull": false,
       "column": "Quantity",
       "count": false,
+      "$idx": 3,
       "lagValues": "1",
       "sum": false,
       "concat": false,
+      "type": "int",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
@@ -93,7 +105,8 @@
       "avg": false,
       "lag": false,
       "leadValues": "1",
-      "stddev": false,
+      "$selected": false,
+      "stddev": true,
       "value": true,
       "leadDiff": false,
       "first": false
@@ -101,13 +114,15 @@
     {
       "last": false,
       "lagDiff": false,
-      "max": false,
+      "max": true,
       "firstLastNotNull": false,
       "column": "Pct",
       "count": false,
+      "$idx": 4,
       "lagValues": "1",
       "sum": false,
       "concat": false,
+      "type": "float",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
@@ -116,7 +131,8 @@
       "avg": false,
       "lag": false,
       "leadValues": "1",
-      "stddev": false,
+      "$selected": false,
+      "stddev": true,
       "value": true,
       "leadDiff": false,
       "first": false
@@ -125,20 +141,81 @@
   "legacyUnboundedWindowStreamBehavior": false,
   "windows": [
     {
-      "windowUpperBound": 0.0,
+      "windowLimitMode": "ROWS",
+      "windowUpperBound": 0,
       "enablePartitioning": false,
-      "enableOrdering": false,
-      "precedingRows": 0,
-      "limitFollowing": false,
-      "orders": [],
-      "limitPreceding": false,
-      "followingRows": 0,
-      "windowLowerBound": 0.0,
-      "enableLimits": false
+      "enableOrdering": true,
+      "precedingRows": 50,
+      "limitFollowing": true,
+      "orders": [
+        {
+          "column": "Year",
+          "desc": false
+        }
+      ],
+      "limitPreceding": true,
+      "followingRows": 50,
+      "windowLowerBound": 0,
+      "enableLimits": true
     }
   ],
   "computedColumns": [],
   "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "Year",
+            "type": "int"
+          },
+          {
+            "name": "Month",
+            "type": "int"
+          },
+          {
+            "name": "Make",
+            "type": "string"
+          },
+          {
+            "name": "Quantity",
+            "type": "int"
+          },
+          {
+            "name": "Pct",
+            "type": "float"
+          },
+          {
+            "name": "Year_max",
+            "type": "int"
+          },
+          {
+            "name": "Month_avg",
+            "type": "double"
+          },
+          {
+            "name": "Make_count",
+            "type": "bigint"
+          },
+          {
+            "name": "Quantity_max",
+            "type": "int"
+          },
+          {
+            "name": "Quantity_stddev",
+            "type": "double"
+          },
+          {
+            "name": "Pct_max",
+            "type": "float"
+          },
+          {
+            "name": "Pct_stddev",
+            "type": "double"
+          }
+        ],
+        "userModified": false
+      }
+    },
     "distinct": false,
     "enabled": false
   },
@@ -183,5 +260,6 @@
   "ntile": false,
   "rank": false,
   "denseRank": false,
-  "rowNumber": false
+  "rowNumber": false,
+  "outputColumnNameOverrides": {}
 }
