@@ -73,7 +73,7 @@
       "items": [
         {
           "ref": "norway_new_car_sales_by_make_copy",
-          "appendMode": false
+          "appendMode": true
         }
       ]
     }
