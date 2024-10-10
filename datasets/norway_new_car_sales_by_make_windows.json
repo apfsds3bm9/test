@@ -97,7 +97,14 @@
       {"name":"Month","type":"int"},
       {"name":"Make","type":"string"},
       {"name":"Quantity","type":"int"},
-      {"name":"Pct","type":"float"}
+      {"name":"Pct","type":"float"},
+      {"name":"Year_max","type":"int"},
+      {"name":"Month_avg","type":"double"},
+      {"name":"Make_count","type":"bigint"},
+      {"name":"Quantity_max","type":"int"},
+      {"name":"Quantity_stddev","type":"double"},
+      {"name":"Pct_max","type":"float"},
+      {"name":"Pct_stddev","type":"double"}
     ],
     "userModified": true
   },
