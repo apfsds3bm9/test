@@ -10,20 +10,6 @@
         "$showList": false,
         "num": 2009,
         "operator": "\u003d\u003d [number]"
-      },
-      {
-        "input": "Year",
-        "col": "Month",
-        "$showList": false,
-        "num": 2010,
-        "operator": "\u003d\u003d [number]"
-      },
-      {
-        "input": "Year",
-        "col": "Month",
-        "$showList": false,
-        "num": 2012,
-        "operator": "\u003d\u003d [number]"
       }
     ]
   },
