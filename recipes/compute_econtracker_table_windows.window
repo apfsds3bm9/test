@@ -52,7 +52,7 @@
       "orderColumn": "Month",
       "concatSeparator": ",",
       "last": false,
-      "max": true,
+      "max": false,
       "firstLastNotNull": false,
       "column": "Indicator",
       "count": true,
@@ -68,7 +68,7 @@
       "$idx": 2,
       "lagValues": "1",
       "sum": false,
-      "type": "string",
+      "type": "float",
       "dateDiffUnit": "DAY",
       "min": false,
       "avg": false,
@@ -96,7 +96,7 @@
       "$idx": 3,
       "lagValues": "1",
       "sum": false,
-      "type": "string",
+      "type": "float",
       "dateDiffUnit": "DAY",
       "min": false,
       "avg": false,
@@ -124,7 +124,7 @@
       "$idx": 4,
       "lagValues": "1",
       "sum": false,
-      "type": "string",
+      "type": "float",
       "dateDiffUnit": "DAY",
       "min": false,
       "avg": false,
@@ -184,15 +184,15 @@
           },
           {
             "name": "Monthly Change",
-            "type": "string"
+            "type": "float"
           },
           {
             "name": "Yearly change",
-            "type": "string"
+            "type": "float"
           },
           {
             "name": "Indexed value",
-            "type": "string"
+            "type": "float"
           },
           {
             "name": "Month_count",
@@ -200,10 +200,6 @@
           },
           {
             "name": "Month_first",
-            "type": "string"
-          },
-          {
-            "name": "Indicator_max",
             "type": "string"
           },
           {
@@ -216,7 +212,7 @@
           },
           {
             "name": "Monthly Change_max",
-            "type": "string"
+            "type": "float"
           },
           {
             "name": "Monthly Change_count",
@@ -224,15 +220,15 @@
           },
           {
             "name": "Monthly Change_first",
-            "type": "string"
+            "type": "float"
           },
           {
             "name": "Monthly Change_lag",
-            "type": "string"
+            "type": "float"
           },
           {
             "name": "Yearly change_max",
-            "type": "string"
+            "type": "float"
           },
           {
             "name": "Yearly change_count",
@@ -240,11 +236,11 @@
           },
           {
             "name": "Yearly change_first",
-            "type": "string"
+            "type": "float"
           },
           {
             "name": "Indexed value_max",
-            "type": "string"
+            "type": "float"
           },
           {
             "name": "Indexed value_count",
@@ -252,7 +248,7 @@
           },
           {
             "name": "Indexed value_first",
-            "type": "string"
+            "type": "float"
           }
         ],
         "userModified": false
