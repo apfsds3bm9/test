@@ -5,17 +5,20 @@
   },
   "ntileValues": "10",
   "retrievedColumnsSelectionMode": "ALL",
+  "keys": [],
   "values": [
     {
       "last": false,
       "lagDiff": false,
-      "max": false,
+      "max": true,
       "firstLastNotNull": false,
       "column": "Year",
-      "count": false,
+      "count": true,
+      "$idx": 0,
       "lagValues": "1",
       "sum": false,
       "concat": false,
+      "type": "string",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
@@ -24,31 +27,37 @@
       "avg": false,
       "lag": false,
       "leadValues": "1",
+      "$selected": false,
       "stddev": false,
       "value": true,
       "leadDiff": false,
       "first": false
     },
     {
-      "last": false,
       "lagDiff": false,
+      "$idx": 1,
+      "lagValues": "1",
+      "sum": false,
+      "type": "string",
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "avg": false,
+      "lag": true,
+      "leadValues": "1",
+      "$selected": false,
+      "stddev": false,
+      "value": true,
+      "orderColumn": "Year",
+      "concatSeparator": ",",
+      "last": false,
       "max": false,
       "firstLastNotNull": false,
       "column": "Month",
       "count": false,
-      "lagValues": "1",
-      "sum": false,
-      "concat": false,
+      "concat": true,
       "lead": false,
       "concatDistinct": false,
-      "dateDiffUnit": "DAY",
-      "min": false,
       "countDistinct": false,
-      "avg": false,
-      "lag": false,
-      "leadValues": "1",
-      "stddev": false,
-      "value": true,
       "leadDiff": false,
       "first": false
     },
@@ -58,10 +67,12 @@
       "max": false,
       "firstLastNotNull": false,
       "column": "Make",
-      "count": false,
+      "count": true,
+      "$idx": 2,
       "lagValues": "1",
       "sum": false,
       "concat": false,
+      "type": "string",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
@@ -70,6 +81,7 @@
       "avg": false,
       "lag": false,
       "leadValues": "1",
+      "$selected": true,
       "stddev": false,
       "value": true,
       "leadDiff": false,
@@ -82,9 +94,11 @@
       "firstLastNotNull": false,
       "column": "Quantity",
       "count": false,
+      "$idx": 3,
       "lagValues": "1",
       "sum": false,
       "concat": false,
+      "type": "string",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
@@ -105,9 +119,11 @@
       "firstLastNotNull": false,
       "column": "Pct",
       "count": false,
+      "$idx": 4,
       "lagValues": "1",
       "sum": false,
       "concat": false,
+      "type": "string",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
@@ -125,7 +141,7 @@
   "legacyUnboundedWindowStreamBehavior": false,
   "windows": [
     {
-      "windowUpperBound": 0.0,
+      "windowUpperBound": 0,
       "enablePartitioning": false,
       "enableOrdering": false,
       "precedingRows": 0,
@@ -133,12 +149,59 @@
       "orders": [],
       "limitPreceding": false,
       "followingRows": 0,
-      "windowLowerBound": 0.0,
+      "windowLowerBound": 0,
       "enableLimits": false
     }
   ],
   "computedColumns": [],
   "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "Year",
+            "type": "string"
+          },
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "Make",
+            "type": "string"
+          },
+          {
+            "name": "Quantity",
+            "type": "string"
+          },
+          {
+            "name": "Pct",
+            "type": "string"
+          },
+          {
+            "name": "Year_max",
+            "type": "string"
+          },
+          {
+            "name": "Year_count",
+            "type": "bigint"
+          },
+          {
+            "name": "Month_concat",
+            "type": "string"
+          },
+          {
+            "name": "Month_lag",
+            "type": "string"
+          },
+          {
+            "name": "Make_count",
+            "type": "bigint"
+          }
+        ],
+        "userModified": false
+      }
+    },
     "distinct": false,
     "enabled": false
   },
@@ -183,5 +246,6 @@
   "ntile": false,
   "rank": false,
   "denseRank": false,
-  "rowNumber": false
+  "rowNumber": false,
+  "outputColumnNameOverrides": {}
 }
