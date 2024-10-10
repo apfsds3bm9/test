@@ -117,7 +117,7 @@
       {"name":"UOM","type":"string"},
       {"name":"UOM_ID","type":"int"},
       {"name":"SCALAR_FACTOR","type":"string"},
-      {"name":"SCALAR_ID","type":"string"},
+      {"name":"SCALAR_ID","type":"int"},
       {"name":"VECTOR","type":"string"},
       {"name":"COORDINATE","type":"string"},
       {"name":"VALUE","type":"string"},
