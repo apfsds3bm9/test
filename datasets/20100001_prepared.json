@@ -58,7 +58,7 @@
     "compress": ""
   },
   "partitioning": {
-    "filePathPattern": "/%Y/%{Make}/.*",
+    "filePathPattern": "/%Y//%{GEO}/.*",
     "ignoreNonMatchingFile": true,
     "considerMissingRequestedPartitionsAsEmpty": false,
     "dimensions": [
@@ -70,7 +70,7 @@
         "type": "time"
       },
       {
-        "name": "Make",
+        "name": "GEO",
         "type": "value"
       }
     ]
