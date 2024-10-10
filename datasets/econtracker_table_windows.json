@@ -96,7 +96,6 @@
       {"name":"Monthly Change","type":"string"},
       {"name":"Yearly change","type":"string"},
       {"name":"Indexed value","type":"string"},
-      {"name":"Month_max","type":"string"},
       {"name":"Month_count","type":"bigint"},
       {"name":"Month_first","type":"string"},
       {"name":"Indicator_max","type":"string"},
