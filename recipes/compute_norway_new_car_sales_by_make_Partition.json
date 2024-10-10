@@ -64,7 +64,7 @@
       "items": [
         {
           "ref": "norway_new_car_sales_by_make_Partition",
-          "appendMode": false
+          "appendMode": true
         }
       ]
     }
