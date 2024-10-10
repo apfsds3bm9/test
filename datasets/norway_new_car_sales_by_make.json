@@ -108,7 +108,7 @@
   "schema": {
     "columns": [
       {"name":"Year","type":"string"},
-      {"name":"Month","type":"string"},
+      {"name":"Month","type":"int"},
       {"name":"Make","type":"string"},
       {"name":"Quantity","type":"string"},
       {"name":"Pct","type":"string"}
