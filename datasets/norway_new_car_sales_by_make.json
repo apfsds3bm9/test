@@ -110,7 +110,7 @@
       {"name":"Year","type":"string"},
       {"name":"Month","type":"int"},
       {"name":"Make","type":"string"},
-      {"name":"Quantity","type":"string"},
+      {"name":"Quantity","type":"int"},
       {"name":"Pct","type":"string"}
     ],
     "userModified": true
