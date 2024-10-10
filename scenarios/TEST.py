@@ -16,7 +16,7 @@ z = [project['projectKey'] for project in project_keys]
 list_partitions = ["2009", "2010"]
 for z in list_partitions:
     s = Scenario()
-    step = BuildFlowItemsStepDefHelper(f"Data Preparation {z}")
+    step = BuildFlowItemsStepDefHelper(f"Data Preparation {z}", partitions = z)
     step.add_dataset("norway_new_car_sales_by_make", "TASKCHUAVAI")  # Thay "QS_MLOPS_2" bằng z[0]
     step.add_dataset("norway_new_car_sales_by_make_filtered", "TASKCHUAVAI")  # Thay "QS_MLOPS_2" bằng z[0]
     step.add_dataset("norway_new_car_sales_by_make_filtered_by_Make", "TASKCHUAVAI") 
