@@ -47,7 +47,7 @@
       "integrations": []
     },
     "flowBuildSettings": {
-      "mergeSparkPipelines": false,
+      "mergeSparkPipelines": true,
       "pruneBeforeSparkPipelines": true,
       "mergeSqlPipelines": false,
       "pruneBeforeSqlPipelines": true,
