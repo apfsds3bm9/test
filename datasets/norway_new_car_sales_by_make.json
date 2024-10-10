@@ -111,7 +111,7 @@
       {"name":"Month","type":"int"},
       {"name":"Make","type":"string"},
       {"name":"Quantity","type":"int"},
-      {"name":"Pct","type":"int"}
+      {"name":"Pct","type":"double"}
     ],
     "userModified": true
   },
