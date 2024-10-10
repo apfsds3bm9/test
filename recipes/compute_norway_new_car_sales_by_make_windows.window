@@ -18,7 +18,7 @@
       "lagValues": "1",
       "sum": false,
       "concat": false,
-      "type": "date",
+      "type": "int",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
@@ -167,7 +167,7 @@
         "columns": [
           {
             "name": "Year",
-            "type": "date"
+            "type": "int"
           },
           {
             "name": "Month",
@@ -187,7 +187,7 @@
           },
           {
             "name": "Year_max",
-            "type": "date"
+            "type": "int"
           },
           {
             "name": "Year_count",
