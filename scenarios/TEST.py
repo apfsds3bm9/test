@@ -22,7 +22,7 @@ for z in list_partitions:
     step.add_dataset("norway_new_car_sales_by_make_filtered_by_make", "TASKCHUAVAI") 
     step.add_dataset("unmatched", "TEST") #unmatched
     # Chạy step với build_mode là RECURSIVE_FORCED_BUILD
-    s.build_dataset("norway_new_car_sales_by_make_filtered_by_maker", "TASKCHUAVAI", build_mode="RECURSIVE_FORCED_BUILD")
+    s.build_dataset("norway_new_car_sales_by_make_filtered_by_make", "TASKCHUAVAI", build_mode="RECURSIVE_FORCED_BUILD")
     
 
 
