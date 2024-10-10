@@ -110,7 +110,8 @@
       {"name":"STATUS","type":"string"},
       {"name":"SYMBOL","type":"string"},
       {"name":"TERMINATED","type":"string"},
-      {"name":"DECIMALS","type":"string"}
+      {"name":"DECIMALS","type":"string"},
+      {"name":"One_Filed","type":"string"}
     ],
     "userModified": true
   },
