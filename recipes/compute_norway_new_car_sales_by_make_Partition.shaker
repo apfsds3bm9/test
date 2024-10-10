@@ -29,8 +29,22 @@
   },
   "explorationFilters": [],
   "columnUseScientificNotationByName": {},
-  "exploreUIParams": {},
-  "steps": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "EnrichWithRecordContextProcessor",
+      "params": {
+        "partitionOutputColumn": "Phan_Vung_Data"
+      },
+      "alwaysShowComment": false
+    }
+  ],
   "maxProcessedMemTableBytes": -1,
   "previewMode": "ALL_ROWS",
   "vizSampling": {
@@ -57,7 +71,14 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
-  "columnWidthsByName": {},
+  "columnWidthsByName": {
+    "Pct": 134,
+    "Month": 100,
+    "Year": 100,
+    "Phan_Vung_Data": 300,
+    "Quantity": 100,
+    "Make": 106
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {
