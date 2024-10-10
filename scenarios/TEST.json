@@ -2,14 +2,6 @@
   "type": "custom_python",
   "name": "Test",
   "active": false,
-  "creationTag": {
-    "versionNumber": 0,
-    "lastModifiedBy": {
-      "login": "thinhprovc202@gmail.com"
-    },
-    "lastModifiedOn": 1728577282171,
-    "extendedProperties": {}
-  },
   "checklists": {
     "checklists": []
   },
