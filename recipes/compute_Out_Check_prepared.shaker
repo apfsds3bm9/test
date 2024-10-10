@@ -29,8 +29,22 @@
   },
   "explorationFilters": [],
   "columnUseScientificNotationByName": {},
-  "exploreUIParams": {},
-  "steps": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "EnrichWithRecordContextProcessor",
+      "params": {
+        "partitionOutputColumn": "PhanVung"
+      },
+      "alwaysShowComment": false
+    }
+  ],
   "maxProcessedMemTableBytes": -1,
   "previewMode": "ALL_ROWS",
   "vizSampling": {
@@ -57,7 +71,23 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
-  "columnWidthsByName": {},
+  "columnWidthsByName": {
+    "REF_DATE": 106,
+    "VALUE": 100,
+    "SCALAR_FACTOR": 113,
+    "UOM_ID": 100,
+    "VECTOR": 100,
+    "GEO": 190,
+    "SCALAR_ID": 100,
+    "DGUID": 113,
+    "UOM": 100,
+    "Sales": 100,
+    "Origin of manufacture": 218,
+    "Vehicle type": 190,
+    "Seasonal adjustment": 158,
+    "COORDINATE": 120,
+    "PhanVung": 300
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {
