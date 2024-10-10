@@ -58,19 +58,19 @@
     "compress": ""
   },
   "partitioning": {
-    "filePathPattern": "10/10/2024",
+    "filePathPattern": "2010%Y%{2012}",
     "ignoreNonMatchingFile": false,
     "considerMissingRequestedPartitionsAsEmpty": false,
     "dimensions": [
       {
-        "name": "10/10/2024",
+        "name": "2010",
         "params": {
           "period": "YEAR"
         },
         "type": "time"
       },
       {
-        "name": "11/10/2024",
+        "name": "2012",
         "type": "value"
       }
     ]
