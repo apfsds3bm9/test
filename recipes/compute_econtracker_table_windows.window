@@ -5,140 +5,263 @@
   },
   "ntileValues": "10",
   "retrievedColumnsSelectionMode": "ALL",
+  "keys": [],
   "values": [
     {
-      "last": false,
       "lagDiff": false,
-      "max": false,
+      "$idx": 0,
+      "lagValues": "1",
+      "sum": false,
+      "type": "string",
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "avg": false,
+      "lag": false,
+      "leadValues": "1",
+      "$selected": true,
+      "stddev": false,
+      "value": true,
+      "orderColumn": "Month",
+      "concatSeparator": ",",
+      "last": false,
+      "max": true,
       "firstLastNotNull": false,
       "column": "Month",
-      "count": false,
-      "lagValues": "1",
-      "sum": false,
+      "count": true,
       "concat": false,
       "lead": false,
       "concatDistinct": false,
+      "countDistinct": false,
+      "leadDiff": false,
+      "first": true
+    },
+    {
+      "lagDiff": false,
+      "$idx": 1,
+      "lagValues": "1",
+      "sum": false,
+      "type": "string",
       "dateDiffUnit": "DAY",
       "min": false,
-      "countDistinct": false,
       "avg": false,
       "lag": false,
       "leadValues": "1",
+      "$selected": true,
       "stddev": false,
       "value": true,
-      "leadDiff": false,
-      "first": false
-    },
-    {
+      "orderColumn": "Month",
+      "concatSeparator": ",",
       "last": false,
-      "lagDiff": false,
-      "max": false,
+      "max": true,
       "firstLastNotNull": false,
       "column": "Indicator",
-      "count": false,
-      "lagValues": "1",
-      "sum": false,
+      "count": true,
       "concat": false,
       "lead": false,
       "concatDistinct": false,
-      "dateDiffUnit": "DAY",
-      "min": false,
       "countDistinct": false,
-      "avg": false,
-      "lag": false,
-      "leadValues": "1",
-      "stddev": false,
-      "value": true,
       "leadDiff": false,
-      "first": false
+      "first": true
     },
     {
-      "last": false,
       "lagDiff": false,
-      "max": false,
+      "$idx": 2,
+      "lagValues": "1",
+      "sum": false,
+      "type": "string",
+      "dateDiffUnit": "DAY",
+      "min": false,
+      "avg": false,
+      "lag": true,
+      "leadValues": "1",
+      "$selected": true,
+      "stddev": false,
+      "value": true,
+      "orderColumn": "Month",
+      "concatSeparator": ",",
+      "last": false,
+      "max": true,
       "firstLastNotNull": false,
       "column": "Monthly Change",
-      "count": false,
-      "lagValues": "1",
-      "sum": false,
+      "count": true,
       "concat": false,
       "lead": false,
       "concatDistinct": false,
+      "countDistinct": false,
+      "leadDiff": false,
+      "first": true
+    },
+    {
+      "lagDiff": false,
+      "$idx": 3,
+      "lagValues": "1",
+      "sum": false,
+      "type": "string",
       "dateDiffUnit": "DAY",
       "min": false,
-      "countDistinct": false,
       "avg": false,
       "lag": false,
       "leadValues": "1",
+      "$selected": true,
       "stddev": false,
       "value": true,
-      "leadDiff": false,
-      "first": false
-    },
-    {
+      "orderColumn": "Month",
+      "concatSeparator": ",",
       "last": false,
-      "lagDiff": false,
-      "max": false,
+      "max": true,
       "firstLastNotNull": false,
       "column": "Yearly change",
-      "count": false,
-      "lagValues": "1",
-      "sum": false,
+      "count": true,
       "concat": false,
       "lead": false,
       "concatDistinct": false,
-      "dateDiffUnit": "DAY",
-      "min": false,
       "countDistinct": false,
-      "avg": false,
-      "lag": false,
-      "leadValues": "1",
-      "stddev": false,
-      "value": true,
       "leadDiff": false,
-      "first": false
+      "first": true
     },
     {
-      "last": false,
       "lagDiff": false,
-      "max": false,
-      "firstLastNotNull": false,
-      "column": "Indexed value",
-      "count": false,
+      "$idx": 4,
       "lagValues": "1",
       "sum": false,
-      "concat": false,
-      "lead": false,
-      "concatDistinct": false,
+      "type": "string",
       "dateDiffUnit": "DAY",
       "min": false,
-      "countDistinct": false,
       "avg": false,
       "lag": false,
       "leadValues": "1",
+      "$selected": true,
       "stddev": false,
       "value": true,
+      "orderColumn": "Month",
+      "concatSeparator": ",",
+      "last": false,
+      "max": true,
+      "firstLastNotNull": false,
+      "column": "Indexed value",
+      "count": true,
+      "concat": false,
+      "lead": false,
+      "concatDistinct": false,
+      "countDistinct": false,
       "leadDiff": false,
-      "first": false
+      "first": true
     }
   ],
   "legacyUnboundedWindowStreamBehavior": false,
   "windows": [
     {
-      "windowUpperBound": 0.0,
+      "windowLimitMode": "ROWS",
+      "windowUpperBound": 0,
       "enablePartitioning": false,
-      "enableOrdering": false,
-      "precedingRows": 0,
-      "limitFollowing": false,
-      "orders": [],
-      "limitPreceding": false,
-      "followingRows": 0,
-      "windowLowerBound": 0.0,
-      "enableLimits": false
+      "enableOrdering": true,
+      "precedingRows": 50,
+      "limitFollowing": true,
+      "orders": [
+        {
+          "column": "Month",
+          "desc": false
+        }
+      ],
+      "limitPreceding": true,
+      "followingRows": 50,
+      "windowLowerBound": 0,
+      "enableLimits": true
     }
   ],
   "computedColumns": [],
   "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "Month",
+            "type": "string"
+          },
+          {
+            "name": "Indicator",
+            "type": "string"
+          },
+          {
+            "name": "Monthly Change",
+            "type": "string"
+          },
+          {
+            "name": "Yearly change",
+            "type": "string"
+          },
+          {
+            "name": "Indexed value",
+            "type": "string"
+          },
+          {
+            "name": "Month_max",
+            "type": "string"
+          },
+          {
+            "name": "Month_count",
+            "type": "bigint"
+          },
+          {
+            "name": "Month_first",
+            "type": "string"
+          },
+          {
+            "name": "Indicator_max",
+            "type": "string"
+          },
+          {
+            "name": "Indicator_count",
+            "type": "bigint"
+          },
+          {
+            "name": "Indicator_first",
+            "type": "string"
+          },
+          {
+            "name": "Monthly Change_max",
+            "type": "string"
+          },
+          {
+            "name": "Monthly Change_count",
+            "type": "bigint"
+          },
+          {
+            "name": "Monthly Change_first",
+            "type": "string"
+          },
+          {
+            "name": "Monthly Change_lag",
+            "type": "string"
+          },
+          {
+            "name": "Yearly change_max",
+            "type": "string"
+          },
+          {
+            "name": "Yearly change_count",
+            "type": "bigint"
+          },
+          {
+            "name": "Yearly change_first",
+            "type": "string"
+          },
+          {
+            "name": "Indexed value_max",
+            "type": "string"
+          },
+          {
+            "name": "Indexed value_count",
+            "type": "bigint"
+          },
+          {
+            "name": "Indexed value_first",
+            "type": "string"
+          }
+        ],
+        "userModified": false
+      }
+    },
     "distinct": false,
     "enabled": false
   },
@@ -183,5 +306,6 @@
   "ntile": false,
   "rank": false,
   "denseRank": false,
-  "rowNumber": false
+  "rowNumber": false,
+  "outputColumnNameOverrides": {}
 }
