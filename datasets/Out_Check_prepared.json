@@ -106,7 +106,8 @@
       {"name":"SCALAR_ID","type":"bigint"},
       {"name":"VECTOR","type":"string"},
       {"name":"COORDINATE","type":"string"},
-      {"name":"VALUE","type":"bigint"}
+      {"name":"VALUE","type":"bigint"},
+      {"name":"Partition","type":"string"}
     ],
     "userModified": true
   },
