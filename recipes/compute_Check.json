@@ -3,7 +3,8 @@
   "neverRecomputeExistingPartitions": false,
   "params": {
     "envSelection": {
-      "envMode": "INHERIT"
+      "envMode": "INHERIT",
+      "envName": "MyEnv"
     },
     "sparkConfig": {
       "inheritConf": "default",
