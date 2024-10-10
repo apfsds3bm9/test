@@ -91,16 +91,19 @@
   },
   "schema": {
     "columns": [
-      {"name":"Year","type":"string"},
-      {"name":"Month","type":"string"},
+      {"name":"Year","type":"date"},
+      {"name":"Month","type":"int"},
       {"name":"Make","type":"string"},
-      {"name":"Quantity","type":"string"},
-      {"name":"Pct","type":"string"},
-      {"name":"Year_max","type":"string"},
+      {"name":"Quantity","type":"int"},
+      {"name":"Pct","type":"int"},
+      {"name":"Year_max","type":"date"},
       {"name":"Year_count","type":"bigint"},
+      {"name":"Month_avg","type":"double"},
       {"name":"Month_concat","type":"string"},
-      {"name":"Month_lag","type":"string"},
-      {"name":"Make_count","type":"bigint"}
+      {"name":"Month_lag","type":"int"},
+      {"name":"Make_count","type":"bigint"},
+      {"name":"Quantity_avg","type":"double"},
+      {"name":"Pct_avg","type":"double"}
     ],
     "userModified": true
   },
