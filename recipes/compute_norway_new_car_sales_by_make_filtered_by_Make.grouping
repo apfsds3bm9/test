@@ -5,71 +5,94 @@
   },
   "keys": [
     {
-      "column": "Make"
+      "countDistinct": false,
+      "min": false,
+      "avg": false,
+      "last": false,
+      "max": false,
+      "column": "Make",
+      "count": false,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "stddev": false,
+      "first": false
     }
   ],
   "values": [
     {
       "last": false,
-      "max": false,
+      "max": true,
       "firstLastNotNull": false,
       "column": "Year",
       "count": false,
+      "$idx": 0,
       "sum": false,
       "concat": false,
+      "type": "int",
       "concatDistinct": false,
       "sum2": false,
       "min": false,
       "countDistinct": false,
       "avg": false,
+      "$selected": false,
       "stddev": false,
       "first": false
     },
     {
       "last": false,
-      "max": false,
+      "max": true,
       "firstLastNotNull": false,
       "column": "Month",
-      "count": false,
+      "count": true,
+      "$idx": 1,
       "sum": false,
       "concat": false,
+      "type": "int",
       "concatDistinct": false,
       "sum2": false,
-      "min": false,
+      "min": true,
       "countDistinct": false,
-      "avg": false,
+      "avg": true,
+      "$selected": false,
       "stddev": false,
       "first": false
     },
     {
       "last": false,
-      "max": false,
+      "max": true,
       "firstLastNotNull": false,
       "column": "Quantity",
       "count": false,
+      "$idx": 2,
       "sum": false,
       "concat": false,
+      "type": "int",
       "concatDistinct": false,
       "sum2": false,
-      "min": false,
+      "min": true,
       "countDistinct": false,
-      "avg": false,
+      "avg": true,
+      "$selected": false,
       "stddev": false,
       "first": false
     },
     {
       "last": false,
-      "max": false,
+      "max": true,
       "firstLastNotNull": false,
       "column": "Pct",
       "count": false,
+      "$idx": 3,
       "sum": false,
       "concat": false,
+      "type": "float",
       "concatDistinct": false,
       "sum2": false,
-      "min": false,
+      "min": true,
       "countDistinct": false,
-      "avg": false,
+      "avg": true,
+      "$selected": false,
       "stddev": false,
       "first": false
     }
@@ -113,8 +136,68 @@
     }
   },
   "enlargeYourBits": true,
+  "outputColumnNameOverrides": {},
   "computedColumns": [],
   "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "Make",
+            "type": "string"
+          },
+          {
+            "name": "Year_max",
+            "type": "int"
+          },
+          {
+            "name": "Month_min",
+            "type": "int"
+          },
+          {
+            "name": "Month_max",
+            "type": "int"
+          },
+          {
+            "name": "Month_count",
+            "type": "bigint"
+          },
+          {
+            "name": "Month_avg",
+            "type": "double"
+          },
+          {
+            "name": "Quantity_min",
+            "type": "int"
+          },
+          {
+            "name": "Quantity_max",
+            "type": "int"
+          },
+          {
+            "name": "Quantity_avg",
+            "type": "double"
+          },
+          {
+            "name": "Pct_min",
+            "type": "float"
+          },
+          {
+            "name": "Pct_max",
+            "type": "float"
+          },
+          {
+            "name": "Pct_avg",
+            "type": "double"
+          },
+          {
+            "name": "count",
+            "type": "bigint"
+          }
+        ],
+        "userModified": false
+      }
+    },
     "distinct": false,
     "enabled": false
   }
