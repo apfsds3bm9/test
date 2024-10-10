@@ -107,7 +107,7 @@
   },
   "schema": {
     "columns": [
-      {"name":"Year","type":"string"},
+      {"name":"Year","type":"date"},
       {"name":"Month","type":"int"},
       {"name":"Make","type":"string"},
       {"name":"Quantity","type":"int"},
