@@ -94,6 +94,17 @@
   "schema": {
     "columns": [
       {"name":"Make","type":"string"},
+      {"name":"Year_max","type":"int"},
+      {"name":"Month_min","type":"int"},
+      {"name":"Month_max","type":"int"},
+      {"name":"Month_count","type":"bigint"},
+      {"name":"Month_avg","type":"double"},
+      {"name":"Quantity_min","type":"int"},
+      {"name":"Quantity_max","type":"int"},
+      {"name":"Quantity_avg","type":"double"},
+      {"name":"Pct_min","type":"float"},
+      {"name":"Pct_max","type":"float"},
+      {"name":"Pct_avg","type":"double"},
       {"name":"count","type":"bigint"}
     ],
     "userModified": true
