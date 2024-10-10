@@ -115,7 +115,7 @@
       {"name":"Sales","type":"string"},
       {"name":"Seasonal adjustment","type":"string"},
       {"name":"UOM","type":"string"},
-      {"name":"UOM_ID","type":"string"},
+      {"name":"UOM_ID","type":"int"},
       {"name":"SCALAR_FACTOR","type":"string"},
       {"name":"SCALAR_ID","type":"string"},
       {"name":"VECTOR","type":"string"},
