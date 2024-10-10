@@ -103,6 +103,13 @@
   "schema": {
     "columns": [
       {"name":"Make","type":"string"},
+      {"name":"Year_distinct","type":"bigint"},
+      {"name":"Month_min","type":"int"},
+      {"name":"Month_max","type":"int"},
+      {"name":"Month_count","type":"bigint"},
+      {"name":"Month_avg","type":"double"},
+      {"name":"Quantity_count","type":"bigint"},
+      {"name":"Pct_count","type":"bigint"},
       {"name":"count","type":"bigint"}
     ],
     "userModified": true
