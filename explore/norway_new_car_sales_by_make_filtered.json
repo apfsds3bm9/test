@@ -28,9 +28,10 @@
         "timeout": -1,
         "filter": {
           "distinct": false,
+          "expression": "val(\u0027Year\u0027) \u003d\u003d 2009",
           "enabled": true,
           "uiData": {
-            "mode": "\u0026\u0026",
+            "mode": "CUSTOM",
             "conditions": [
               {
                 "input": "Year",
@@ -57,7 +58,7 @@
         "maxReadUncompressedBytes": -1
       },
       "autoRefreshSample": false,
-      "_refreshTrigger": 1728579503894
+      "_refreshTrigger": 1728579616012
     },
     "vizSampling": {
       "selection": {
