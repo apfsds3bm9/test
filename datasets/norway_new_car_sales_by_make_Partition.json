@@ -63,7 +63,7 @@
     "considerMissingRequestedPartitionsAsEmpty": false,
     "dimensions": [
       {
-        "name": "date",
+        "name": "Year",
         "params": {
           "period": "YEAR"
         },
