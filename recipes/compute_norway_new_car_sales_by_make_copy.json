@@ -53,7 +53,7 @@
   "customMeta": {
     "kv": {}
   },
-  "redispatchPartitioning": false,
+  "redispatchPartitioning": true,
   "maxRunningActivities": 0,
   "hashPropagationBehavior": "INHERIT",
   "variables": {},
