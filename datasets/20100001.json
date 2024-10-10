@@ -109,7 +109,7 @@
     "columns": [
       {"name":"REF_DATE","type":"string"},
       {"name":"GEO","type":"string"},
-      {"name":"DGUID","type":"string"},
+      {"name":"DGUID","type":"string","meaning":"Text"},
       {"name":"Vehicle type","type":"string"},
       {"name":"Origin of manufacture","type":"string"},
       {"name":"Sales","type":"string"},
