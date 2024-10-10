@@ -16,13 +16,16 @@ z = [project['projectKey'] for project in project_keys]
 list_partitions = ["2009", "2010"]
 for z in list_partitions:
     s = Scenario()
-    step = BuildFlowItemsStepDefHelper(f"Data Preparation {z}", partitions = z)
+    step = BuildFlowItemsStepDefHelper(f"Data Preparation {z}")
     step.add_dataset("norway_new_car_sales_by_make", "TASKCHUAVAI")  # Thay "QS_MLOPS_2" bằng z[0]
     step.add_dataset("norway_new_car_sales_by_make_filtered", "TASKCHUAVAI")  # Thay "QS_MLOPS_2" bằng z[0]
     step.add_dataset("norway_new_car_sales_by_make_filtered_by_Make", "TASKCHUAVAI") 
     step.add_dataset("unmatched", "TEST") #unmatched
     # Chạy step với build_mode là RECURSIVE_FORCED_BUILD
-    s.build_dataset("norway_new_car_sales_by_make_filtered_by_Make", "TASKCHUAVAI", build_mode="RECURSIVE_FORCED_BUILD")
+    s.build_dataset("norway_new_car_sales_by_make_filtered_by_Make", 
+                    "TASKCHUAVAI", 
+                    build_mode="RECURSIVE_FORCED_BUILD", 
+                    partitions = z)
     
 
 
