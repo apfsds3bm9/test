@@ -124,7 +124,7 @@
       "lagValues": "1",
       "sum": false,
       "concat": false,
-      "type": "int",
+      "type": "float",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
@@ -183,7 +183,7 @@
           },
           {
             "name": "Pct",
-            "type": "int"
+            "type": "float"
           },
           {
             "name": "Year_max",
