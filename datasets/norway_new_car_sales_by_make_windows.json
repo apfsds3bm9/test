@@ -91,12 +91,12 @@
   },
   "schema": {
     "columns": [
-      {"name":"Year","type":"date"},
+      {"name":"Year","type":"int"},
       {"name":"Month","type":"int"},
       {"name":"Make","type":"string"},
       {"name":"Quantity","type":"int"},
       {"name":"Pct","type":"int"},
-      {"name":"Year_max","type":"date"},
+      {"name":"Year_max","type":"int"},
       {"name":"Year_count","type":"bigint"},
       {"name":"Month_avg","type":"double"},
       {"name":"Month_concat","type":"string"},
