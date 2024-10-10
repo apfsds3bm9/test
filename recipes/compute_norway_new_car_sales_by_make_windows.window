@@ -18,7 +18,7 @@
       "lagValues": "1",
       "sum": false,
       "concat": false,
-      "type": "string",
+      "type": "date",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
@@ -27,7 +27,7 @@
       "avg": false,
       "lag": false,
       "leadValues": "1",
-      "$selected": false,
+      "$selected": true,
       "stddev": false,
       "value": true,
       "leadDiff": false,
@@ -38,13 +38,13 @@
       "$idx": 1,
       "lagValues": "1",
       "sum": false,
-      "type": "string",
+      "type": "int",
       "dateDiffUnit": "DAY",
       "min": false,
-      "avg": false,
+      "avg": true,
       "lag": true,
       "leadValues": "1",
-      "$selected": false,
+      "$selected": true,
       "stddev": false,
       "value": true,
       "orderColumn": "Year",
@@ -98,15 +98,16 @@
       "lagValues": "1",
       "sum": false,
       "concat": false,
-      "type": "string",
+      "type": "int",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
       "min": false,
       "countDistinct": false,
-      "avg": false,
+      "avg": true,
       "lag": false,
       "leadValues": "1",
+      "$selected": true,
       "stddev": false,
       "value": true,
       "leadDiff": false,
@@ -123,15 +124,16 @@
       "lagValues": "1",
       "sum": false,
       "concat": false,
-      "type": "string",
+      "type": "int",
       "lead": false,
       "concatDistinct": false,
       "dateDiffUnit": "DAY",
       "min": false,
       "countDistinct": false,
-      "avg": false,
+      "avg": true,
       "lag": false,
       "leadValues": "1",
+      "$selected": true,
       "stddev": false,
       "value": true,
       "leadDiff": false,
@@ -143,10 +145,15 @@
     {
       "windowUpperBound": 0,
       "enablePartitioning": false,
-      "enableOrdering": false,
+      "enableOrdering": true,
       "precedingRows": 0,
       "limitFollowing": false,
-      "orders": [],
+      "orders": [
+        {
+          "column": "Year",
+          "desc": false
+        }
+      ],
       "limitPreceding": false,
       "followingRows": 0,
       "windowLowerBound": 0,
@@ -160,11 +167,11 @@
         "columns": [
           {
             "name": "Year",
-            "type": "string"
+            "type": "date"
           },
           {
             "name": "Month",
-            "type": "string"
+            "type": "int"
           },
           {
             "name": "Make",
@@ -172,19 +179,23 @@
           },
           {
             "name": "Quantity",
-            "type": "string"
+            "type": "int"
           },
           {
             "name": "Pct",
-            "type": "string"
+            "type": "int"
           },
           {
             "name": "Year_max",
-            "type": "string"
+            "type": "date"
           },
           {
             "name": "Year_count",
             "type": "bigint"
+          },
+          {
+            "name": "Month_avg",
+            "type": "double"
           },
           {
             "name": "Month_concat",
@@ -192,11 +203,19 @@
           },
           {
             "name": "Month_lag",
-            "type": "string"
+            "type": "int"
           },
           {
             "name": "Make_count",
             "type": "bigint"
+          },
+          {
+            "name": "Quantity_avg",
+            "type": "double"
+          },
+          {
+            "name": "Pct_avg",
+            "type": "double"
           }
         ],
         "userModified": false
