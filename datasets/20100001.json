@@ -107,7 +107,7 @@
   },
   "schema": {
     "columns": [
-      {"name":"REF_DATE","type":"string"},
+      {"name":"REF_DATE","type":"date"},
       {"name":"GEO","type":"string"},
       {"name":"DGUID","type":"string"},
       {"name":"Vehicle type","type":"string"},
