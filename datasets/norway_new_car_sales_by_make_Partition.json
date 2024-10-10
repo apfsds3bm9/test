@@ -58,22 +58,10 @@
     "compress": ""
   },
   "partitioning": {
-    "filePathPattern": "2010%Y%{2012}",
+    "filePathPattern": "",
     "ignoreNonMatchingFile": false,
     "considerMissingRequestedPartitionsAsEmpty": false,
-    "dimensions": [
-      {
-        "name": "2010",
-        "params": {
-          "period": "YEAR"
-        },
-        "type": "time"
-      },
-      {
-        "name": "2012",
-        "type": "value"
-      }
-    ]
+    "dimensions": []
   },
   "creationTag": {
     "versionNumber": 0,
