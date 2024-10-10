@@ -58,14 +58,14 @@
     "compress": ""
   },
   "partitioning": {
-    "filePathPattern": "%Y/.*",
+    "filePathPattern": "%Y-%M-%D/*",
     "ignoreNonMatchingFile": false,
     "considerMissingRequestedPartitionsAsEmpty": false,
     "dimensions": [
       {
         "name": "REF_DATE",
         "params": {
-          "period": "YEAR"
+          "period": "DAY"
         },
         "type": "time"
       }
