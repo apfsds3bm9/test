@@ -58,7 +58,7 @@
     "compress": ""
   },
   "partitioning": {
-    "filePathPattern": "/%Y//%{GEO}/.*",
+    "filePathPattern": "/%Y///.*",
     "ignoreNonMatchingFile": true,
     "considerMissingRequestedPartitionsAsEmpty": false,
     "dimensions": [
@@ -68,10 +68,6 @@
           "period": "YEAR"
         },
         "type": "time"
-      },
-      {
-        "name": "GEO",
-        "type": "value"
       }
     ]
   },
