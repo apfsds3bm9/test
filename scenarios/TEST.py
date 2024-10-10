@@ -1,6 +1,7 @@
 # This sample code helps you get started with the custom scenario API.
 #For more details and samples, please see our Documentation
-from dataiku.scenario import Scenario
+from dataiku.scenario import Scenario, BuildFlowItemsStepDefHelper
+import dataiku
 
 # The Scenario object is the main handle from which you initiate steps
 scenario = Scenario()
