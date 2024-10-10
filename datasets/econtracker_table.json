@@ -110,7 +110,7 @@
       {"name":"Month","type":"string"},
       {"name":"Indicator","type":"string"},
       {"name":"Monthly Change","type":"float"},
-      {"name":"Yearly change","type":"string"},
+      {"name":"Yearly change","type":"float"},
       {"name":"Indexed value","type":"string"}
     ],
     "userModified": true
