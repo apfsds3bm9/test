@@ -56,16 +56,13 @@
     "compress": ""
   },
   "partitioning": {
-    "filePathPattern": "/%m/%d/%Y/%{GEO}/",
+    "filePathPattern": "6/1/2024",
     "ignoreNonMatchingFile": false,
     "considerMissingRequestedPartitionsAsEmpty": false,
     "dimensions": [
       {
-        "name": "REF_DATE",
-        "params": {
-          "period": "YEAR"
-        },
-        "type": "time"
+        "name": "GEO",
+        "type": "value"
       }
     ]
   },
