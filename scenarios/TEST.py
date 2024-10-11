@@ -5,7 +5,10 @@ from dataiku.scenario import BuildFlowItemsStepDefHelper
 # Lấy dataset chứa thông tin `Make`
 mydataset = dataiku.Dataset("norway_new_car_sales_by_make_filtered_2")
 df = mydataset.get_dataframe()
-
+vars = dataiku.get_variables()
+vars['standard']['varname'] = 'varvalue'
+dataiku.set_variables(vars)
+    
 # Lấy danh sách các giá trị 'Make'
 unique_makes = df['Make'].unique()
 # The Scenario object is the main handle from which you initiate steps
@@ -26,6 +29,3 @@ for make in unique_makes:
     scenario.build_dataset("Test_Python", partitions=make, build_mode="RECURSIVE_FORCED_BUILD")
 
     
-    vars = dataiku.get_variables()
-    vars['standard']['varname'] = 'varvalue'
-    dataiku.set_variables(vars)
