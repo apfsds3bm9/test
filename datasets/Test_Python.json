@@ -58,7 +58,7 @@
     "compress": ""
   },
   "partitioning": {
-    "filePathPattern": "%Y\\.*",
+    "filePathPattern": "%Y/%{Make}/.*",
     "ignoreNonMatchingFile": false,
     "considerMissingRequestedPartitionsAsEmpty": false,
     "dimensions": [
