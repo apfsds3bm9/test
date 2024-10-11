@@ -8,8 +8,6 @@ df = mydataset.get_dataframe()
 
 project_handle = dataiku.api_client().get_project(dataiku.default_project_key())
 vars = project_handle.get_variables()
-vars['standard']['varname'] = 'varvalue'
-project_handle.set_variables(vars)
     
 # Lấy danh sách các giá trị 'Make'
 unique_makes = df['Make'].unique()
@@ -18,8 +16,8 @@ scenario = Scenario()
 unique_makes = unique_makes[:2]
 # Building a dataset - Lặp qua danh sách các `Make`
 for make in unique_makes:
-    scenario_variables = {"makes_list": str(make)}
-    scenario.set_scenario_variables(var = scenario_variables)
+    vars['standard']["makes_list"] str(make)
+    project_handle.set_variables(vars)
     # Khởi tạo một step mới cho từng `Make`
     step = BuildFlowItemsStepDefHelper(f"Data Preparation for {make}")
     
