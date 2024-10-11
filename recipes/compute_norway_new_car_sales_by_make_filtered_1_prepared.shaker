@@ -27,10 +27,64 @@
     },
     "autoRefreshSample": false
   },
-  "explorationFilters": [],
+  "explorationFilters": [
+    {
+      "validityFilter": {
+        "column": "PhanVung",
+        "type": "validity",
+        "params": {
+          "nok": true,
+          "type": "FreeText",
+          "ok": true,
+          "empty": true
+        }
+      },
+      "column": "PhanVung",
+      "active": true,
+      "alphanumFilter": {
+        "selectedValues": [
+          "This column will only be valued when running a Prepare recipe"
+        ],
+        "column": "PhanVung",
+        "type": "alphanum",
+        "params": {
+          "mode": "full_string",
+          "normalization": "exact"
+        }
+      },
+      "type": "columnFilter",
+      "$$hashKey": "object:52100",
+      "facet": {
+        "columnType": "ALPHANUM",
+        "selectedValues": {
+          "This column will only be valued when running a Prepare recipe": true
+        },
+        "column": "PhanVung",
+        "sort": "count",
+        "type": "facet",
+        "currentMode": "ALPHANUM"
+      },
+      "currentMode": "FACET"
+    }
+  ],
   "columnUseScientificNotationByName": {},
-  "exploreUIParams": {},
-  "steps": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "EnrichWithRecordContextProcessor",
+      "params": {
+        "partitionOutputColumn": "PhanVung",
+        "partitionChunksOutputColumnsPrefix": "1212"
+      },
+      "alwaysShowComment": false
+    }
+  ],
   "maxProcessedMemTableBytes": -1,
   "previewMode": "ALL_ROWS",
   "vizSampling": {
@@ -57,7 +111,14 @@
     "autoRefreshSample": false
   },
   "analysisColumnData": {},
-  "columnWidthsByName": {},
+  "columnWidthsByName": {
+    "Pct": 134,
+    "Month": 100,
+    "Year": 100,
+    "Quantity": 100,
+    "Make": 106,
+    "PhanVung": 300
+  },
   "sorting": [],
   "globalSearchQuery": "",
   "coloring": {
