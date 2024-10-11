@@ -1,7 +1,7 @@
 import dataiku
 
 # Đọc biến partition từ Scenario (lấy từ custom variables)
-current_make = dataiku.get_custom_variables()["current_make"]
+current_make = dataiku.get_custom_variables()["makes_list"]
 
 # Đọc dataset đầu vào
 mydataset = dataiku.Dataset("norway_new_car_sales_by_make_filtered_2")
