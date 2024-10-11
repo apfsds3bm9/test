@@ -61,12 +61,7 @@
     "filePathPattern": "",
     "ignoreNonMatchingFile": false,
     "considerMissingRequestedPartitionsAsEmpty": false,
-    "dimensions": [
-      {
-        "name": "Maker",
-        "type": "value"
-      }
-    ]
+    "dimensions": []
   },
   "creationTag": {
     "versionNumber": 0,
