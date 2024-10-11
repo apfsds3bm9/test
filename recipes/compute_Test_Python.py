@@ -29,7 +29,7 @@ unique_years = df['Year'].unique()
 with myoutputdataset.get_writer() as writer:
     for year in unique_years:
         # Lọc dữ liệu của từng năm
-        partition_df = df[df['year'] == year]
+        partition_df = df[df['Year'] == year]
         
         # Không cần gọi set_write_partition, chỉ cần ghi dataframe
         writer.write_dataframe(partition_df)
