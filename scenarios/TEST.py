@@ -22,8 +22,8 @@ for z in list_partitions:
     # Chạy step với build_mode là RECURSIVE_FORCED_BUILD
     s.build_dataset("Test_Python", 
                     "TASKCHUAVAI", 
-                    build_mode="FORCE_RECURSIVE_BUILD",
-                    partitions = z)
+                    build_mode="RECURSIVE_BUILD",)
+                    #partitions = z)
     
 
 
