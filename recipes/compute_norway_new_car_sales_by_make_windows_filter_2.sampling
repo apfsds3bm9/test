@@ -1,15 +1,22 @@
 {
   "uiData": {
-    "mode": "\u0026\u0026",
-    "$latestOperator": "\u0026\u0026",
+    "mode": "||",
+    "$latestOperator": "||",
     "$filterOptions": "rules",
     "conditions": [
       {
         "input": "Year",
         "col": "Month",
         "$showList": false,
-        "num": 2010,
-        "operator": "\u003c  [number]"
+        "num": 2009,
+        "operator": "\u003d\u003d [number]"
+      },
+      {
+        "input": "Year",
+        "col": "Month",
+        "$showList": false,
+        "num": 2008,
+        "operator": "\u003d\u003d [number]"
       }
     ]
   },
