@@ -20,7 +20,7 @@ for z in list_partitions:
     #step.add_dataset("norway_new_car_sales_by_make", "TASKCHUAVAI", partitions =)  # Thay "QS_MLOPS_2" bằng z[0]
     step.add_dataset("Test_Python", "TASKCHUAVAI", partitions = z)  # Thay "QS_MLOPS_2" bằng z[0]
     # Chạy step với build_mode là RECURSIVE_FORCED_BUILD
-    s.build_dataset("Test_Python", 
+    s.build_dataset("Test_Python_filtered", 
                     "TASKCHUAVAI", 
                     build_mode="RECURSIVE_BUILD",
                     partitions = z)
