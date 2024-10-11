@@ -5,9 +5,11 @@ from dataiku.scenario import BuildFlowItemsStepDefHelper
 # Lấy dataset chứa thông tin `Make`
 mydataset = dataiku.Dataset("norway_new_car_sales_by_make_filtered_2")
 df = mydataset.get_dataframe()
-vars = dataiku.get_variables()
+
+project_handle = dataiku.api_client().get_project(dataiku.default_project_key())
+vars = project_handle.get_variables()
 vars['standard']['varname'] = 'varvalue'
-dataiku.set_variables(vars)
+project_handle.set_variables(vars)
     
 # Lấy danh sách các giá trị 'Make'
 unique_makes = df['Make'].unique()
