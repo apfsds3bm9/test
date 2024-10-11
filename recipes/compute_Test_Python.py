@@ -12,7 +12,7 @@ import dataiku
 
 # Read the input dataset
 mydataset = dataiku.Dataset("norway_new_car_sales_by_make_filtered_2")
-myoutputdataset = dataiku.Dataset("norway_new_car_sales_by_make_partitioned")
+myoutputdataset = dataiku.Dataset("Test_Python")
 
 # Initialize writer for output dataset
 with myoutputdataset.get_writer() as writer:
