@@ -9,7 +9,8 @@
         "col": "Month",
         "$showList": false,
         "num": 2010,
-        "operator": "\u003d\u003d [number]"
+        "operator": "\u003e\u003c [number]",
+        "num2": 12
       }
     ]
   },
