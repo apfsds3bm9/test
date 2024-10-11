@@ -16,7 +16,7 @@ scenario = Scenario()
 unique_makes = unique_makes[:2]
 # Building a dataset - Lặp qua danh sách các `Make`
 for make in unique_makes:
-    vars['standard']["makes_list"] str(make)
+    vars['standard']["makes_list"] = str(make)
     project_handle.set_variables(vars)
     # Khởi tạo một step mới cho từng `Make`
     step = BuildFlowItemsStepDefHelper(f"Data Preparation for {make}")
