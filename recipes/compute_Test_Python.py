@@ -32,4 +32,4 @@ with myoutputdataset.get_writer() as writer:
         partition_df = df[(df['Make'] == Make)]
         #myoutputdataset.set_write_partition(str(Make))
         # Không cần gọi set_write_partition, chỉ cần ghi dataframe
-        writer.write_dataframe(partition_df.reset_index())
+        writer.write_dataframe(partition_df)
