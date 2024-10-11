@@ -30,6 +30,6 @@ with myoutputdataset.get_writer() as writer:
     for Make in unique_Maker:
         # Lọc dữ liệu của từng năm
         partition_df = df[(df['Make'] == Make)]
-        myoutputdataset.set_write_partition(str(Make))
+        #myoutputdataset.set_write_partition(str(Make))
         # Không cần gọi set_write_partition, chỉ cần ghi dataframe
         writer.write_dataframe(partition_df)
