@@ -10,7 +10,7 @@ df = mydataset.get_dataframe()
 unique_makes = df['Make'].unique()
 # The Scenario object is the main handle from which you initiate steps
 scenario = Scenario()
-unique_makes = unique_makes[:4]
+unique_makes = unique_makes[:2]
 # Building a dataset - Lặp qua danh sách các `Make`
 for make in unique_makes:
     scenario_variables = {"makes_list": str(make)}
