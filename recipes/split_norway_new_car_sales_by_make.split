@@ -3,14 +3,14 @@
   "centileSplits": [
     {
       "outputIndex": 0,
-      "share": 50.0
+      "share": 50
     }
   ],
-  "defaultOutputIndex": 1,
   "preFilter": {
     "distinct": false,
     "enabled": false
   },
+  "defaultOutputIndex": 0,
   "seed": 1337,
   "randomColumns": [],
   "centileOrders": [],
@@ -18,22 +18,24 @@
   "randomSplits": [
     {
       "outputIndex": 0,
-      "share": 50.0
+      "share": 50
     }
   ],
   "randomColumnsSplits": [
     {
       "outputIndex": 0,
-      "share": 50.0
+      "share": 50
     }
   ],
   "computedColumns": [],
   "writeComputedColumnsInOutput": false,
+  "mode": "FILTERS",
   "centileTDigest": false,
   "valueSplits": [
     {
       "outputIndex": 0,
-      "caseSensitive": false
+      "caseSensitive": false,
+      "value": ""
     }
   ],
   "rangeSplits": [
@@ -91,9 +93,93 @@
       "filter": {
         "uiData": {
           "mode": "\u0026\u0026",
-          "conditions": []
+          "$latestOperator": "\u0026\u0026",
+          "$filterOptions": "rules",
+          "conditions": [
+            {
+              "input": "Year",
+              "col": "Month",
+              "$showList": false,
+              "num": 2009,
+              "items": [],
+              "operator": "\u003d\u003d [number]"
+            }
+          ]
+        },
+        "$status": {
+          "schema": {
+            "columns": [
+              {
+                "name": "Year",
+                "type": "int"
+              },
+              {
+                "name": "Month",
+                "type": "int"
+              },
+              {
+                "name": "Make",
+                "type": "string"
+              },
+              {
+                "name": "Quantity",
+                "type": "int"
+              },
+              {
+                "name": "Pct",
+                "type": "float"
+              }
+            ]
+          }
         },
         "distinct": false,
+        "enabled": true
+      },
+      "outputIndex": 0
+    },
+    {
+      "filter": {
+        "uiData": {
+          "mode": "\u0026\u0026",
+          "$latestOperator": "\u0026\u0026",
+          "$filterOptions": "rules",
+          "conditions": [
+            {
+              "input": "Year",
+              "col": "Month",
+              "$showList": false,
+              "num": 2010,
+              "operator": "\u003e\u003c [number]",
+              "num2": 2012
+            }
+          ]
+        },
+        "$status": {
+          "schema": {
+            "columns": [
+              {
+                "name": "Year",
+                "type": "int"
+              },
+              {
+                "name": "Month",
+                "type": "int"
+              },
+              {
+                "name": "Make",
+                "type": "string"
+              },
+              {
+                "name": "Quantity",
+                "type": "int"
+              },
+              {
+                "name": "Pct",
+                "type": "float"
+              }
+            ]
+          }
+        },
         "enabled": true
       },
       "outputIndex": 0
