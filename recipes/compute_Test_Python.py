@@ -10,6 +10,7 @@ print(f"---------------------------------------------------------{current_make}-
 # Lọc dữ liệu theo partition (Make) hiện tại
 df = mydataset.get_dataframe()
 partition_df = df[df['Make'] == current_make]
+print(f"---------------------------------------------------------{partition_df.shape}--------------------------------------------------------")
 
 # Ghi dữ liệu ra dataset đầu ra
 with myoutputdataset.get_writer() as writer:
