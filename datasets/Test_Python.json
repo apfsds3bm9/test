@@ -92,8 +92,14 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"Year","type":"bigint"},
+      {"name":"Month","type":"bigint"},
+      {"name":"Make","type":"string"},
+      {"name":"Quantity","type":"bigint"},
+      {"name":"Pct","type":"double"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
