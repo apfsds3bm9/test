@@ -14,7 +14,7 @@ unique_makes_str = [str(make) for make in unique_makes]
 
 # Set danh sách này làm biến trong scenario
 scenario_variables = {"makes_list": ",".join(unique_makes_str)}
-Scenario().set_scenario_variables(scenario_variables)
+Scenario().set_scenario_variables(breach_list=scenario_variables)
 
 # The Scenario object is the main handle from which you initiate steps
 scenario = Scenario()
