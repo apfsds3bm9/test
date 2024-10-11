@@ -6,10 +6,10 @@
     "conditions": [
       {
         "input": "Year",
-        "col": "Year",
+        "col": "Month",
         "$showList": false,
         "num": 2010,
-        "operator": "\u003c  [number]"
+        "operator": "\u003c\u003d [number]"
       }
     ]
   },
