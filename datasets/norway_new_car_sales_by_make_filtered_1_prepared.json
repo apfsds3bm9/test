@@ -97,7 +97,8 @@
       {"name":"Month","type":"int"},
       {"name":"Make","type":"string"},
       {"name":"Quantity","type":"int"},
-      {"name":"Pct","type":"float"}
+      {"name":"Pct","type":"float"},
+      {"name":"PhanVung","type":"string"}
     ],
     "userModified": true
   },
