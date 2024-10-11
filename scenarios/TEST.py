@@ -1,6 +1,6 @@
 import dataiku
 from dataiku.scenario import Scenario
-from dataiku.scenario.steps import BuildFlowItemsStepDefHelper
+from dataiku.scenario import BuildFlowItemsStepDefHelper
 
 # Lấy dataset chứa thông tin `Make`
 mydataset = dataiku.Dataset("norway_new_car_sales_by_make_filtered_2")
