@@ -3,6 +3,21 @@
 from dataiku.scenario import Scenario, BuildFlowItemsStepDefHelper
 import dataiku
 
+
+import dataiku
+
+# Lấy dataset chứa thông tin `Make`
+mydataset = dataiku.Dataset("norway_new_car_sales_by_make_filtered_2")
+df = mydataset.get_dataframe()
+
+# Lấy danh sách các giá trị 'Make'
+unique_makes = df['Make'].unique()
+
+# Set danh sách này làm biến trong scenario
+scenario_variables = {"makes_list": ",".join(unique_makes)}
+dataiku.set_scenario_variables(scenario_variables)
+
+
 # The Scenario object is the main handle from which you initiate steps
 scenario = Scenario()
 
