@@ -75,10 +75,8 @@
           "ref": "Test_Python",
           "deps": [
             {
-              "out": "Test_Python_filtered",
-              "idim": "Year",
-              "odim": "Year",
-              "func": "equals",
+              "idim": "Maker",
+              "func": "all_available",
               "params": {},
               "expandVariables": false
             }

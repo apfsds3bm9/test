@@ -58,16 +58,13 @@
     "compress": ""
   },
   "partitioning": {
-    "filePathPattern": "%Y/.*",
+    "filePathPattern": "%{Maker}/.*",
     "ignoreNonMatchingFile": false,
     "considerMissingRequestedPartitionsAsEmpty": false,
     "dimensions": [
       {
-        "name": "Year",
-        "params": {
-          "period": "YEAR"
-        },
-        "type": "time"
+        "name": "Maker",
+        "type": "value"
       }
     ]
   },
