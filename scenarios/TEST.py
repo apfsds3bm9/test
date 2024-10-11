@@ -13,7 +13,7 @@ project_keys = client.list_projects()
 # Lấy key của từng project
 z = [project['projectKey'] for project in project_keys]
 # Building a dataset
-list_partitions = ["Manuefactor"]# ,2009, 2010]
+list_partitions = ["Toyota", "Volvo"]# ,2009, 2010]
 for z in list_partitions:
     s = Scenario()
     step = BuildFlowItemsStepDefHelper(f"Data Preparation {z}")
