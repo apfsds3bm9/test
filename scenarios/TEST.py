@@ -8,19 +8,13 @@ df = mydataset.get_dataframe()
 
 # Lấy danh sách các giá trị 'Make'
 unique_makes = df['Make'].unique()
-
-# Chuyển tất cả các giá trị trong 'Make' thành chuỗi ký tự
-unique_makes_str = [str(make) for make in unique_makes]
-
-# Set danh sách này làm biến trong scenario
-scenario_variables = {"makes_list": unique_makes_str}
-Scenario().set_scenario_variables(breach_list=scenario_variables)
-
 # The Scenario object is the main handle from which you initiate steps
 scenario = Scenario()
 
 # Building a dataset - Lặp qua danh sách các `Make`
 for make in unique_makes:
+    scenario_variables = {"makes_list": str(make)}
+    dataiku.set_scenario_variables(scenario_variables)
     # Khởi tạo một step mới cho từng `Make`
     step = BuildFlowItemsStepDefHelper(f"Data Preparation for {make}")
     
