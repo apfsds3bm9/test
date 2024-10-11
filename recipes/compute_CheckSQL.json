@@ -8,7 +8,11 @@
     "readParams": {
       "mode": "AUTO",
       "autoModeRepartitionInto": 10,
-      "map": {}
+      "map": {
+        "norway_new_car_sales_by_make_filtered_1_copy": {
+          "repartition": 10
+        }
+      }
     },
     "sparkConfig": {
       "inheritConf": "default",
