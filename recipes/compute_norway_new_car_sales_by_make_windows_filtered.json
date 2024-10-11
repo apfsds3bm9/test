@@ -75,7 +75,7 @@
           "ref": "norway_new_car_sales_by_make_windows",
           "deps": [
             {
-              "out": "norway_new_car_sales_by_make_windows_filtered",
+              "out": "rway_new_car_sales_by_make_windows_split_1",
               "idim": "Year",
               "odim": "Year",
               "func": "equals",
@@ -83,7 +83,7 @@
               "expandVariables": false
             },
             {
-              "out": "norway_new_car_sales_by_make_windows_filtered",
+              "out": "rway_new_car_sales_by_make_windows_split_1",
               "idim": "Make",
               "odim": "Make",
               "func": "equals",
@@ -99,7 +99,7 @@
     "main": {
       "items": [
         {
-          "ref": "norway_new_car_sales_by_make_windows_filtered",
+          "ref": "rway_new_car_sales_by_make_windows_split_1",
           "appendMode": false
         }
       ]
