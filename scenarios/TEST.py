@@ -25,8 +25,8 @@ for make in unique_makes:
     step = BuildFlowItemsStepDefHelper(f"Data Preparation for {make}")
     
     # Add các dataset đầu vào và đầu ra
-    step.add_dataset("norway_new_car_sales_by_make_filtered_2", partition=make)  # Thay partition bằng make
-    step.add_dataset("Test_Python", partition=make)  # Thêm partition vào dataset đầu ra
+    step.add_dataset("norway_new_car_sales_by_make_filtered_2", partitions=make)  # Thay partition bằng make
+    step.add_dataset("Test_Python", partitions=make)  # Thêm partition vào dataset đầu ra
     
     # Chạy step với build_mode là RECURSIVE_FORCED_BUILD cho từng partition
-    scenario.build_dataset("Test_Python", partition=make, build_mode="RECURSIVE_FORCED_BUILD")
+    scenario.build_dataset("Test_Python", partitions=make, build_mode="RECURSIVE_FORCED_BUILD")
