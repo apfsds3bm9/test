@@ -49,7 +49,7 @@
     "flowBuildSettings": {
       "mergeSparkPipelines": true,
       "pruneBeforeSparkPipelines": true,
-      "mergeSqlPipelines": false,
+      "mergeSqlPipelines": true,
       "pruneBeforeSqlPipelines": true,
       "defaultRecipeHashPropagationBehavior": "ENABLED"
     },
