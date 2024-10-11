@@ -58,9 +58,22 @@
     "compress": ""
   },
   "partitioning": {
+    "filePathPattern": "%Y/%{Make}/.*",
     "ignoreNonMatchingFile": false,
     "considerMissingRequestedPartitionsAsEmpty": false,
-    "dimensions": []
+    "dimensions": [
+      {
+        "name": "Year",
+        "params": {
+          "period": "YEAR"
+        },
+        "type": "time"
+      },
+      {
+        "name": "Make",
+        "type": "value"
+      }
+    ]
   },
   "creationTag": {
     "versionNumber": 0,
@@ -128,6 +141,16 @@
         "meta": {
           "name": "Record count",
           "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "partitioning",
+        "enabled": true,
+        "computeOnBuildMode": "WHOLE_DATASET",
+        "meta": {
+          "name": "Partitioning statistics",
+          "level": 1
         },
         "configuration": {}
       }
