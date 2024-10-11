@@ -86,7 +86,7 @@
     "metastoreDatabaseName": "default",
     "metastoreTableName": "${projectKey}_Test_Python_filtered",
     "connection": "dataiku-managed-storage",
-    "path": "/managed-dss-data/TASKCHUAVAI/Test_Python_filtered/2009/",
+    "path": "/managed-dss-data/TASKCHUAVAI/Test_Python_filtered/",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
       "mode": "ALL",
