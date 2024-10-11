@@ -23,7 +23,7 @@ for z in list_partitions:
     s.build_dataset("Test_Python", 
                     "TASKCHUAVAI", 
                     build_mode="RECURSIVE_BUILD",)
-                    #partitions = z)
+                    partitions = z)
     
 
 
