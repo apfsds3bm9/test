@@ -23,7 +23,7 @@ myoutputdataset = dataiku.Dataset("Test_Python")
 df = mydataset.get_dataframe()
 
 # Lấy danh sách các giá trị duy nhất của cột 'year'
-unique_years = df['year'].unique()
+unique_years = df['Year'].unique()
 
 # Lưu dữ liệu theo partition từng năm
 with myoutputdataset.get_writer() as writer:
