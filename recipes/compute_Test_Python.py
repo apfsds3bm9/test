@@ -1,13 +1,3 @@
-# -*- coding: utf-8 -*-
-import dataiku
-import pandas as pd, numpy as np
-from dataiku import pandasutils as pdu
-
-# Read recipe inputs
-#norway_new_car_sales_by_make_filtered_2 = dataiku.Dataset("norway_new_car_sales_by_make_filtered_2")
-#norway_new_car_sales_by_make_filtered_2_df = norway_new_car_sales_by_make_filtered_2.get_dataframe()
-
-
 import dataiku
 
 # Read the input dataset
@@ -16,12 +6,17 @@ myoutputdataset = dataiku.Dataset("Test_Python")
 
 df = mydataset.get_dataframe()
 
-# Kiểm tra schema của dataframe
-print("DataFrame Schema:")
-print(df.dtypes)
+# Lấy danh sách các giá trị duy nhất của cột 'year'
+unique_years = df['Year'].unique()
 
-# Kiểm tra schema của dataset đầu ra
-myoutputdataset.write_schema_from_dataframe(df)
-
+# Lưu dữ liệu theo partition từng năm
 with myoutputdataset.get_writer() as writer:
-    writer.write_dataframe(df)
+    for year in unique_years:
+        # Lọc dữ liệu của từng năm
+        partition_df = df[df['Year'] == year]
+        
+        # Thiết lập partition theo năm
+        myoutputdataset.set_write_partition(str(year))
+        
+        # Ghi dữ liệu của partition đó
+        writer.write_dataframe(partition_df)
