@@ -14,21 +14,14 @@ import dataiku
 mydataset = dataiku.Dataset("norway_new_car_sales_by_make_filtered_2")
 myoutputdataset = dataiku.Dataset("Test_Python")
 
-# Initialize writer for output dataset
-with myoutputdataset.get_writer() as writer:
-    # Loop through each partition from the input dataset
-    for p in mydataset.list_partitions():
-        # Set partition to read from
-        mydataset.read_partitions = [p]
-        
-        # Get dataframe for the current partition
-        df = mydataset.get_dataframe()
-        
-        # Set partition to write to in the output dataset
-        myoutputdataset.set_write_partition(str(p))
-        
-        # Write dataframe to the corresponding partition
-        writer.write_dataframe(df)
+df = mydataset.get_dataframe()
 
-    # Close the writer after all partitions are written
-    writer.close()
+# Kiểm tra schema của dataframe
+print("DataFrame Schema:")
+print(df.dtypes)
+
+# Kiểm tra schema của dataset đầu ra
+myoutputdataset.write_schema_from_dataframe(df)
+
+with myoutputdataset.get_writer() as writer:
+    writer.write_dataframe(df)
