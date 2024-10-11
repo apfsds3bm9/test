@@ -24,7 +24,7 @@ for z in list_partitions:
     # Chạy step với build_mode là RECURSIVE_FORCED_BUILD
     s.build_dataset("norway_new_car_sales_by_make_filtered", 
                     "TASKCHUAVAI", 
-                    build_mode="RECURSIVE_FORCED_BUILD",
+                    build_mode="RECURSIVE_BUILD",
                     partitions = z)
     
 
