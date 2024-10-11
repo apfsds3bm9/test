@@ -73,7 +73,14 @@
       "items": [
         {
           "ref": "Test_Python",
-          "deps": []
+          "deps": [
+            {
+              "idim": "Make",
+              "func": "all_available",
+              "params": {},
+              "expandVariables": false
+            }
+          ]
         }
       ]
     }
