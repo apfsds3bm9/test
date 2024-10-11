@@ -24,3 +24,8 @@ for make in unique_makes:
     
     # Chạy step với build_mode là RECURSIVE_FORCED_BUILD cho từng partition
     scenario.build_dataset("Test_Python", partitions=make, build_mode="RECURSIVE_FORCED_BUILD")
+
+    
+    vars = dataiku.get_variables()
+    vars['standard']['varname'] = 'varvalue'
+    dataiku.set_variables(vars)
