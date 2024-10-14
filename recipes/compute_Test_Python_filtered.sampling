@@ -21,12 +21,12 @@
       }
     ]
   },
-  "expression": "( val(\u0027Year\u0027) \u003d\u003d 2008 ) \u0026\u0026 ( strval(\u0027Make\u0027) \u003d\u003d \u0027Toyota\u0027 )",
+  "expression": "( val(\u0027Year\u0027) \u003d\u003d 2008 ) \u0026\u0026 ( strval(\u0027Make\u0027) \u003d\u003d \u0027 variables.proc_day\u0027 )",
   "$status": {
     "validated": true,
     "fullyTranslated": true,
     "ok": true,
-    "sql": "(\"Year\" \u003d 2008) AND (\"Make\" \u003d \u0027Toyota\u0027)"
+    "sql": "(\"Year\" \u003d 2008) AND (\"Make\" \u003d \u0027 variables.proc_day\u0027)"
   },
   "distinct": false,
   "enabled": true
