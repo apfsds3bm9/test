@@ -6,7 +6,7 @@ from dataiku.scenario import BuildFlowItemsStepDefHelper
 mydataset = dataiku.Dataset("norway_new_car_sales_by_make_filtered_2")
 df = mydataset.get_dataframe()
 
-project_handle = dataiku.api_client().get_project(dataiku.default_project_key())
+project_handle = dataiku.api_client().get_project("TASKCHUAVAI")
 vars = project_handle.get_variables()
     
 # Lấy danh sách các giá trị 'Make'
