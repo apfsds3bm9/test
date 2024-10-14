@@ -82,7 +82,7 @@
     "metastoreSynchronizationEnabled": true,
     "metastoreDatabaseName": "default",
     "metastoreTableName": "${projectKey}_Test_Python_filtered",
-    "connection": "sample-data",
+    "connection": "dataiku-managed-storage",
     "path": "/managed-dss-data/${projectKey}/Test_Python_filtered",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
