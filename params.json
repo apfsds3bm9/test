@@ -15,19 +15,19 @@
     {
       "group": "space_administrators",
       "admin": true,
-      "readProjectContent": true,
-      "writeProjectContent": true,
-      "exportDatasetsData": true,
-      "readDashboards": true,
-      "writeDashboards": true,
-      "moderateDashboards": true,
-      "publishToDataCollections": true,
-      "shareToWorkspaces": true,
-      "runScenarios": true,
-      "manageDashboardAuthorizations": true,
-      "manageExposedElements": true,
-      "manageAdditionalDashboardUsers": true,
-      "executeApp": true
+      "readProjectContent": false,
+      "writeProjectContent": false,
+      "exportDatasetsData": false,
+      "readDashboards": false,
+      "writeDashboards": false,
+      "moderateDashboards": false,
+      "publishToDataCollections": false,
+      "shareToWorkspaces": false,
+      "runScenarios": false,
+      "manageDashboardAuthorizations": false,
+      "manageExposedElements": false,
+      "manageAdditionalDashboardUsers": false,
+      "executeApp": false
     }
   ],
   "additionalDashboardUsers": {
