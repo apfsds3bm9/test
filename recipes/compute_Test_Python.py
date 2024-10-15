@@ -11,7 +11,4 @@ print(f"--------------------------------------------------------- Name:{current_
 df = mydataset.get_dataframe()
 partition_df = df[df['Make'] == current_make]
 print(f"--------------------------------------------------------- Shape: {partition_df.shape}--------------------------------------------------------")
-
-# Ghi dữ liệu ra dataset đầu ra
-with myoutputdataset.get_writer() as writer:
-    writer.write_dataframe(partition_df)
+Add_ds_coll.write_with_schema(partition_df)
