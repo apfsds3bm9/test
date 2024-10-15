@@ -2386,7 +2386,7 @@
       "max_order": 5,
       "stationary": false,
       "maxiter": 50,
-      "enabled": true
+      "enabled": false
     },
     "seasonal_loess_timeseries": {
       "period": {
@@ -2671,7 +2671,7 @@
       "use_seasonal_model": true,
       "use_default_time_features": true,
       "seed": 1337,
-      "enabled": false
+      "enabled": true
     },
     "gluonts_simple_feed_forward_timeseries": {
       "context_length": {
