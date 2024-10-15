@@ -11,4 +11,4 @@ print(f"--------------------------------------------------------- Name:{current_
 df = mydataset.get_dataframe()
 partition_df = df[df['Make'] == current_make]
 print(f"--------------------------------------------------------- Shape: {partition_df.shape}--------------------------------------------------------")
-Add_ds_coll.write_with_schema(partition_df)
+myoutputdataset.write_with_schema(partition_df)
