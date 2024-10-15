@@ -83,7 +83,7 @@
       "items": [
         {
           "ref": "norway_new_car_sales_by_make_filtered_2",
-          "appendMode": false
+          "appendMode": true
         }
       ]
     }
