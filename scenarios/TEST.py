@@ -3,7 +3,7 @@ from dataiku.scenario import Scenario
 from dataiku.scenario import BuildFlowItemsStepDefHelper
 
 # Lấy dataset chứa thông tin `Make`
-mydataset = dataiku.Dataset("norway_new_car_sales_by_make_filtered_2")
+mydataset = dataiku.Dataset("norway_new_car_sales_by_make")
 df = mydataset.get_dataframe()
 #dataiku.default_project_key()
 print(dataiku.default_project_key())
