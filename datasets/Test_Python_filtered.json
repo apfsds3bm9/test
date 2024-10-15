@@ -83,7 +83,7 @@
     "metastoreDatabaseName": "default",
     "metastoreTableName": "${projectKey}_Test_Python_filtered",
     "connection": "dataiku-managed-storage",
-    "path": "/managed-dss-data/TASKCHUAVAI/Test_Python_filtered/Ford/",
+    "path": "/managed-dss-data/TASKCHUAVAI/Test_Python_filtered/",
     "notReadyIfEmpty": false,
     "filesSelectionRules": {
       "mode": "ALL",
