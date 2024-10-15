@@ -2604,7 +2604,7 @@
       "daily_seasonality": "auto",
       "seed": 1337,
       "_use_external_features": false,
-      "enabled": false
+      "enabled": true
     },
     "gluonts_npts_timeseries": {
       "context_length": {
@@ -2671,7 +2671,7 @@
       "use_seasonal_model": true,
       "use_default_time_features": true,
       "seed": 1337,
-      "enabled": true
+      "enabled": false
     },
     "gluonts_simple_feed_forward_timeseries": {
       "context_length": {
