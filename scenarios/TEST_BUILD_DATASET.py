@@ -14,6 +14,7 @@ project_key = dataiku.default_project_key()
 unique_makes = df['Make'].unique()
 # The Scenario object is the main handle from which you initiate steps
 scenario = Scenario()
+# Lấy ra 6 hãng xe trang danh sách Make (các hãng xe).
 unique_makes = unique_makes[:6]
 # Building a dataset - Lặp qua danh sách các `Make`
 for make in unique_makes:
