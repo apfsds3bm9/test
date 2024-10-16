@@ -2,14 +2,6 @@
   "type": "custom_python",
   "name": "Test_runstep",
   "active": false,
-  "creationTag": {
-    "versionNumber": 0,
-    "lastModifiedBy": {
-      "login": "thinhprovc666@gmail.com"
-    },
-    "lastModifiedOn": 1729044879894,
-    "extendedProperties": {}
-  },
   "checklists": {
     "checklists": []
   },
