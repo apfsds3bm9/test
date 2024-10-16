@@ -21,6 +21,6 @@ for make in unique_makes:
     project_handle.set_variables(vars)
     # Chạy step với build_mode là RECURSIVE_FORCED_BUILD cho từng partition
     #scenario.build_dataset("Test_Python", partitions=make, build_mode="RECURSIVE_FORCED_BUILD")
-    #scenario.build_dataset("Test_Python_filtered", partitions=make, build_mode="RECURSIVE_BUILD")
+    scenario.build_dataset("Test_Python_filtered", partitions=make, build_mode="RECURSIVE_BUILD")
 
     
