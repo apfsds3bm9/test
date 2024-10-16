@@ -9,7 +9,7 @@ df = mydataset.get_dataframe()
 print(dataiku.default_project_key())
 project_handle = dataiku.api_client().get_project(dataiku.default_project_key())
 vars = project_handle.get_variables()
-    
+project_key = dataiku.default_project_key(
 # Lấy danh sách các giá trị 'Make'
 unique_makes = df['Make'].unique()
 # The Scenario object is the main handle from which you initiate steps
@@ -23,8 +23,8 @@ for make in unique_makes:
     step = BuildFlowItemsStepDefHelper(f"Data Preparation for {make}")
     
     # Add các dataset đầu vào và đầu ra
-    step.add_dataset("norway_new_car_sales_by_make_filtered_2", project_key = dataiku.default_project_key(), partitions=make)  # Thay partition bằng make
-    step.add_dataset("Test_Python", project_key = dataiku.default_project_key(), partitions=make)  # Thêm partition vào dataset đầu ra
+    step.add_dataset("norway_new_car_sales_by_make_filtered_2", project_key = project_key, partitions=make)  # Thay partition bằng make
+    step.add_dataset("Test_Python", project_key = project_key, partitions=make)  # Thêm partition vào dataset đầu ra
     
     # Chạy step với build_mode là RECURSIVE_FORCED_BUILD cho từng partition
     #scenario.build_dataset("Test_Python", partitions=make, build_mode="RECURSIVE_FORCED_BUILD")
