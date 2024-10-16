@@ -27,8 +27,6 @@ for make in unique_makes:
     step.add_dataset("Test_Python", project_key = project_key, partitions=make)  # Thêm partition vào dataset đầu ra
     step.add_dataset("Test_Python_filtered", project_key = project_key, partitions=make)
     # Chạy step với build_mode là RECURSIVE_FORCED_BUILD cho từng partition
-    #scenario.build_dataset("Test_Python", partitions=make, build_mode="RECURSIVE_FORCED_BUILD")
-    #scenario.build_dataset("Test_Python_filtered", partitions=make, build_mode="RECURSIVE_BUILD")
     scenario.run_step(step.get_step())
 
     
