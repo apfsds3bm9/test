@@ -22,7 +22,7 @@ for make in unique_makes:
     # Khởi tạo một step mới cho từng `Make`
     step = BuildFlowItemsStepDefHelper(f"Data Preparation for {make}")
     # Add các dataset đầu vào và đầu ra
-    #step.add_dataset("norway_new_car_sales_by_make_filtered_2", project_key = project_key, partitions=make)  # Thay partition bằng make
+    step.add_dataset("norway_new_car_sales_by_make_filtered_2", project_key = project_key, partitions=make)  # Thay partition bằng make
     step.add_dataset("Test_Python", project_key = project_key, partitions=make)  # Thêm partition vào dataset đầu ra
     #step.add_dataset("Test_Python_filtered", project_key = project_key, partitions=make)
     # Chạy step với build_mode là RECURSIVE_FORCED_BUILD cho từng partition
