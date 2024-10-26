@@ -58,4 +58,4 @@ def add_json_to_dataset(json):
         add_content_to_dataset(dataset_name, json)
         return {'status': 200, 'name': json.get('name', '')}
     else:
-        return {'status': 400, 'reason': json}, scenario.run_and_wait()
+        return {'status': 400, 'reason': json}, scenario.run()
