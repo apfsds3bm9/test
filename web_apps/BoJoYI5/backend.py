@@ -53,4 +53,4 @@ def add_json_to_dataset(json):
         add_content_to_dataset(dataset_name, json)
         return {'status': 200, 'name': json.get('name', '')}
     else:
-        return {'status': 400, 'reason': "Dataset {dataset} does not exist".format(dataset_name)}
+        return {'status': 400, 'reason': "Dataset {} does not exist".format(dataset_name)}
