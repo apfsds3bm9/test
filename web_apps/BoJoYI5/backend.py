@@ -3,7 +3,7 @@ import pandas as pd
 from flask import Response, request
 import logging
 import json
-
+from dataikuapi.dss.scenario import DSSScenario
 
 @app.route('/first_form', methods=['POST', 'PUT'])
 def first_form():
@@ -47,11 +47,12 @@ def add_json_to_dataset(json):
     client = dataiku.api_client()
     project_handle = dataiku.api_client().get_project(dataiku.default_project_key())
     vars = project_handle.get_variables()
+    PROJECT_KEY = dataiku.default_project_key()
     vars["standard"]["Test"] = dataset_name
     project_handle.set_variables(vars)
     project = client.get_default_project()
     dataset = project.get_dataset(dataset_name)
-    scenario = project.get_scenario("TEST_RUNSTEP")
+    scenario = DSSScenario(client, PROJECT_KEY, "TEST_RUNSTEP")
     print("------------------" + dataset_name + "------------------")
     if dataset.exists():
         add_content_to_dataset(dataset_name, json)
