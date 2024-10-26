@@ -8,7 +8,7 @@
     "hideJSSecurityPanel": false,
     "envSelection": {
       "envMode": "INHERIT",
-      "envName": "datascience"
+      "envName": "time_series"
     },
     "nbProcesses": 1,
     "backendAPIAccessEnabled": false,
@@ -43,7 +43,7 @@
   },
   "config": {},
   "name": "Test_Webapp",
-  "apiKey": "e:AES:X2:iy0as7Xp7ksLWyn9k7dt6XHxfTYU+OEqDI/L80bwIYnxcvbMLIl7ChHsE7TdSzwa4YV00FxAdQAQYHcWttqx9Z78/wPJoY2239PM+UTkViEr+h+DFV1R",
+  "apiKey": "e:AES:X2:2pHI27zZworN7E2wPzO/Na9TeB9lPlQ9QWJ01rR0aBTSFn22P1L/e2kg1xZbbmv/oVIllbL/Y54diczETW0bCvPKBWWaWSg4AteBH2o/AwjQdO9fNH5G",
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
