@@ -43,7 +43,7 @@ def add_json_to_dataset(json):
     :return: a dict representing the result of the addition.
     """
     # This could be a part of data sent by the frontend.
-    dataset_name = str(json)
+    dataset_name = "L1"
     client = dataiku.api_client()
     vars["standard"]["Test"] = dataset_name
     project = client.get_default_project()
