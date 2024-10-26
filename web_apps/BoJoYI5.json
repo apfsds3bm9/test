@@ -2,7 +2,7 @@
   "type": "STANDARD",
   "hasLegacyBackendURL": false,
   "params": {
-    "backendEnabled": false,
+    "backendEnabled": true,
     "enableJavascriptModules": false,
     "autoStartBackend": false,
     "hideJSSecurityPanel": false,
@@ -42,7 +42,7 @@
   },
   "config": {},
   "name": "Test_Webapp",
-  "apiKey": "e:AES:X2:PSv7V/IQ/C6ChPN622JwVBLIiVJHb4ZovCmYoezMIuJie5S4ubci4HLXTQlgsju1gAaXPWcnLmBuyluo2bDyPGgvVQFh4T5/QX8DHAq0ZgASULnvE/4j",
+  "apiKey": "e:AES:X2:9o9i7j4ZL0pJ/MOMuXVzOkcDrramZQnwUBnIWKXOzYQIgAyDiZch+okpZbi/4luEWwpvHE+cZCFiyM60i9Prp2nsid9cMbNDIMXth9CRberNgzUbl+qU",
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
