@@ -44,14 +44,13 @@ def add_json_to_dataset(json):
     """
 
     # This could be a part of data sent by the frontend.
-    dataset_name = str(json)
+    dataset_name = "Add_ds_coll"
     client = dataiku.api_client()
-    vars["standard"]["Test"] = dataset_name
     project = client.get_default_project()
-    dataset = project.get_scenario(dataset_name)
+    dataset = project.get_dataset(dataset_name)
     print("------------------" + dataset_name + "------------------")
     if dataset.exists():
         add_content_to_dataset(dataset_name, json)
         return {'status': 200, 'name': json.get('name', '')}
     else:
-        return {'status': 400, 'reason': json}#"Dataset {} does not exist".format(dataset_name)}
+        return {'status': 400, 'reason': json}
