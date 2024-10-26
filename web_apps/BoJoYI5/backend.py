@@ -52,6 +52,7 @@ def add_json_to_dataset(json):
     project = client.get_default_project()
     dataset = project.get_dataset(dataset_name)
     scenario = project.get_scenario("TEST_RUNSTEP")
+    scenario.run_and_wait()
     print("------------------" + dataset_name + "------------------")
     if dataset.exists():
         add_content_to_dataset(dataset_name, json)
