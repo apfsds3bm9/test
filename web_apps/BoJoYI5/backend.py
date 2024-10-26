@@ -46,7 +46,7 @@ def add_json_to_dataset(json):
     # This could be a part of data sent by the frontend.
     dataset_name = json
     client = dataiku.api_client()
-    vars["standard"]["Test"] = json
+    vars["standard"]["Test"] = str(json)
     project = client.get_default_project()
     #scenario = project.get_scenario("TEST_RUNSTEP")
     #scenario.run_and_wait()
