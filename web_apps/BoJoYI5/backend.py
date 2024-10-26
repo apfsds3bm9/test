@@ -48,6 +48,7 @@ def add_json_to_dataset(json):
     project_handle = dataiku.api_client().get_project(dataiku.default_project_key())
     vars = project_handle.get_variables()
     vars["standard"]["Test"] = dataset_name
+    project_handle.set_variables(vars)
     project = client.get_default_project()
     dataset = project.get_dataset(dataset_name)
     print("------------------" + dataset_name + "------------------")
