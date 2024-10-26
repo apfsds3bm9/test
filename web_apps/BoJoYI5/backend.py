@@ -44,7 +44,7 @@ def add_json_to_dataset(json):
     """
 
     # This could be a part of data sent by the frontend.
-    dataset_name = "mydataset"
+    dataset_name = json
     client = dataiku.api_client()
     project = client.get_default_project()
     dataset = project.get_dataset(dataset_name)
