@@ -1,22 +1,54 @@
 import dataiku
 import pandas as pd
-from flask import request
+from flask import Response, request
+import logging
+import json
 
 
-# Example:
-# As the Python webapp backend is a Flask app, refer to the Flask
-# documentation for more information about how to adapt this
-# example to your needs.
-# From JavaScript, you can access the defined endpoints using
-# getWebAppBackendUrl('first_api_call')
+@app.route('/first_form', methods=['POST', 'PUT'])
+def first_form():
+    """
+    Process the request sent from the front end.
 
-@app.route('/first_api_call')
-def first_call():
-    max_rows = request.args.get('max_rows') if 'max_rows' in request.args else 500
+    :return: a response containing the data coming from the request.
+    """
+    request_body = request.get_json()
+    resp = add_json_to_dataset(request_body)
 
-    mydataset = dataiku.Dataset("REPLACE_WITH_YOUR_DATASET_NAME")
-    mydataset_df = mydataset.get_dataframe(sampling='head', limit=max_rows)
+    response = Response(response=json.dumps(resp),
+                        status=resp['status'],
+                        mimetype='application/json')
+    response.headers["Content-Type"] = "text/json; charset=utf-8"
+    return response
 
-    # Pandas dataFrames are not directly JSON serializable, use to_json()
-    data = mydataset_df.to_json()
-    return json.dumps({"status": "ok", "data": data})
+
+def add_content_to_dataset(name, json):
+    """
+    Add a new row in JSON format to an existing data.
+    :param name: Name of the dataset.
+    :param json: Value to append.
+    """
+    dataset = dataiku.Dataset(name)
+    df = dataset.get_dataframe()
+    df = df.append(json, ignore_index=True)
+    logging.info(df.head())
+    dataset.write_dataframe(df)
+
+
+def add_json_to_dataset(json):
+    """
+    Add a row to a dataset, only if the dataset exists.
+    :param json: Value to add.
+    :return: a dict representing the result of the addition.
+    """
+
+    # This could be a part of data sent by the frontend.
+    dataset_name = "mydataset"
+    client = dataiku.api_client()
+    project = client.get_default_project()
+    dataset = project.get_dataset(dataset_name)
+    if dataset.exists():
+        add_content_to_dataset(dataset_name, json)
+        return {'status': 200, 'name': json.get('name', '')}
+    else:
+        return {'status': 400, 'reason': "Dataset {} does not exist".format(dataset_name)}
