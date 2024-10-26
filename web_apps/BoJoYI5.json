@@ -7,7 +7,8 @@
     "autoStartBackend": false,
     "hideJSSecurityPanel": false,
     "envSelection": {
-      "envMode": "INHERIT"
+      "envMode": "INHERIT",
+      "envName": "datascience"
     },
     "nbProcesses": 1,
     "backendAPIAccessEnabled": false,
@@ -42,7 +43,7 @@
   },
   "config": {},
   "name": "Test_Webapp",
-  "apiKey": "e:AES:X2:Hx8wVGmP1a7u0NmEBJrWkE6BgSxyMyRpe3LITkBVqTCrdQCSi9Pc9FZ2kMLziZIuTXOPEzdEMvf46/rtGCzP508O3yoLqA12RM02o8d/wUONvuwcKEPN",
+  "apiKey": "e:AES:X2:Qnp1yG75wkAOjcMJAFOZB1zlNnMrqkxguiLGdFi6TpbwAYWT1eC8FsPIa0U1Ut42t8ENh9tAgibRacwlmLe1lCI9s4Nj5gJlUsZNiPKdOmA0xGCkoqvG",
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {

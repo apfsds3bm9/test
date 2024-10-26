@@ -1,74 +1,41 @@
-/*
- * For more information, refer to the "Javascript API" documentation:
- * https://doc.dataiku.com/dss/latest/api/js/index.html
- */
+window.send_data = function (e) {
+    e.preventDefault()
+    param = makeRequestParam()
+    let url = getWebAppBackendUrl('/first_form')
+    fetch(url, param)
+        .then((response) => extractJSON(response))
+        .then((json) => displayResponse(json))
+        .catch((error) => console.log(error))
 
-let exportButton = document.getElementById('export-button');
+    return false
+}
 
-exportButton.addEventListener('click', function (event) {
-    let analysisName = document.getElementById('analysis-name');
-    let analysisValue = analysisName.value || '(no analysis name typed)';
-    let datasetName = document.getElementById('dataset-name');
-    let datasetValue = datasetName.value || '(no dataset chosen)';
-    let datasetColumn = document.getElementById('dataset-column');
-    let columnValue = datasetColumn.value || '(no column chosen)';
-    let rowsLimitValue = document.getElementById('rows-limit').checked;
-    let exportValue = document.querySelector('input[name="export"]:checked').value || '(no export format typed)';
+function extractJSON(response) {
+    return response.json()
+}
 
-    alert('Now YOU should code something if you really want an export. For now, your parameters are: ' + analysisValue + ' / ' + datasetValue  + ' / ' + columnValue + ' / ' + rowsLimitValue + ' / ' + exportValue);
-    event.preventDefault();
-});
+const toastLiveExample = document.getElementById('liveToast')
 
-/* Fetch dataset sample */
-let fetchButton = document.getElementById('fetch-button');
-let datasetName = document.getElementById('dataset-name');
-let messageContainer = document.getElementById('message');
-let selectedDataset = {};
+function displayResponse(response) {
+    let message = `The server respond ${JSON.stringify(response)}`
+    const toast = new bootstrap.Toast(toastLiveExample)
+    $("#feedback").text(message)
+    toast.show()
+}
 
-function displayMessage(messageText, messageClassname) {
-    messageContainer.innerHTML = messageText;
-    messageContainer.className = '';
-    if (messageClassname && messageClassname.length > 0) {
-        messageContainer.className = messageClassname;
+function getName() {
+    return $('#name').val()
+}
+
+function makeRequestParam() {
+    let data = {
+        "name": getName()
+    }
+    return {
+        "method": 'POST',
+        "headers": {
+            'Content-Type': 'application/json',
+        },
+        "body": JSON.stringify(data)
     }
 }
-
-function clearMessage() {
-    displayMessage('');
-}
-
-function displayFailure() {
-    displayMessage('The dataset cannot be retrieved. Please check the dataset name or the API Key\'s permissions in the "Settings" tab of the webapp.', 'error-message');
-}
-
-function displayDataFrame(dataFrame) {
-    let columnsNames = dataFrame.getColumnNames();
-    let line = '------------------------------';
-    let text = selectedDataset.name + '\n'
-        + line + '\n'
-        + dataFrame.getNbRows() + ' Rows\n'
-        + columnsNames.length + ' Columns\n'
-        + '\n' + line + '\n'
-        + 'Columns names: \n';
-    columnsNames.forEach(function(columnName) {
-        text += columnName + ', ';
-    });
-    displayMessage(text);
-}
-
-fetchButton.addEventListener('click', function(event) {
-    clearMessage();
-    selectedDataset.name = document.getElementById('dataset-to-fetch').value;
-    dataiku.fetch(selectedDataset.name, function(dataFrame) {
-        selectedDataset.dataFrame = dataFrame;
-        displayDataFrame(dataFrame);
-    }, function() {
-        displayFailure();
-    });
-    return false;
-});
-$.getJSON(getWebAppBackendUrl('/first_api_call'), function(data) {
-    console.log('Received data from backend', data)
-    const output = $('<pre />').text('Backend reply: ' + JSON.stringify(data));
-    $('body').append(output)
-});
