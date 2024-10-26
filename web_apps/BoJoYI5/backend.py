@@ -13,7 +13,7 @@ def first_form():
     :return: a response containing the data coming from the request.
     """
     request_body = request.get_json()
-    
+    print("------------------ Check Point ------------------")
     resp = add_json_to_dataset(request_body)
 
     response = Response(response=json.dumps(resp),
