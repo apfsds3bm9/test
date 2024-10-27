@@ -31,7 +31,7 @@ def first_form():
     #                    status=resp['status'],
     #                    mimetype='application/json')
     #response.headers["Content-Type"] = "text/json; charset=utf-8"
-    base_scenario.run_and_wait()
+    base_scenario.run()
     return {'status': 200, 'reason': json}
 
 
