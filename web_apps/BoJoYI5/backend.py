@@ -13,14 +13,25 @@ def first_form():
     :return: a response containing the data coming from the request.
     """
     request_body = request.get_json()
-    print("------------------ Check Point ------------------")
-    resp = add_json_to_dataset(request_body)
+    client = dataiku.api_client()
+    project_handle = dataiku.api_client().get_project(dataiku.default_project_key())
+    vars = project_handle.get_variables()
+    PROJECT_KEY = dataiku.default_project_key()
+    vars["standard"]["Test"] = request_body["name"]
+    project_handle.set_variables(vars)
+    project = client.get_default_project()
+    base_scenario = project.get_scenario('TEST_RUNSTEP')
+    settings = base_scenario.get_settings()
+    temp_scenario = project.create_scenario('my_temp_scenario', 'step_based', {'params' : settings.data['params']})
+    
+    temp_scenario.run_and_wait()
+    #resp = add_json_to_dataset(request_body)
 
-    response = Response(response=json.dumps(resp),
-                        status=resp['status'],
-                        mimetype='application/json')
-    response.headers["Content-Type"] = "text/json; charset=utf-8"
-    return response
+    #response = Response(response=json.dumps(resp),
+    #                    status=resp['status'],
+    #                    mimetype='application/json')
+    #response.headers["Content-Type"] = "text/json; charset=utf-8"
+    return {'status': 200, 'reason': json}
 
 
 def add_content_to_dataset(name, json):
