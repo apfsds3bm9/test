@@ -20,7 +20,7 @@ def first_form():
     vars["standard"]["Test"] = request_body["name"]
     project_handle.set_variables(vars)
     project = client.get_default_project()
-    #base_scenario = project.get_scenario('TEST_RUNSTEP')
+    base_scenario = project.get_scenario('TEST_RUNSTEP')
     #settings = base_scenario.get_settings()
     #temp_scenario = project.create_scenario('my_temp_scenario', 'step_based', {'params' : settings.data['params']})
     
