@@ -22,10 +22,12 @@ def first_form():
     project_handle.set_variables(vars)
     project = client.get_default_project()
     base_scenario = project.get_scenario('TEST_RUNSTEP')
-    #settings = base_scenario.get_settings()
-    #temp_scenario = project.create_scenario('my_temp_scenario', 'step_based', {'params' : settings.data['params']})
+    settings = base_scenario.get_settings()
+    temp_scenario = project.create_scenario('my_temp_scenario', 'step_based', {'params' : settings.data['params']})
     
-    #temp_scenario.run_and_wait()
+    temp_scenario.run_and_wait()
+    # remove your temporary scenario 
+    temp_scenario.delete()
     #resp = add_json_to_dataset(request_body)
 
     #response = Response(response=json.dumps(resp),
