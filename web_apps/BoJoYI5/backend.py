@@ -13,11 +13,12 @@ def first_form():
     :return: a response containing the data coming from the request.
     """
     request_body = request.get_json()
+    name = request_body["name"]
     client = dataiku.api_client()
     project_handle = dataiku.api_client().get_project(dataiku.default_project_key())
     vars = project_handle.get_variables()
     PROJECT_KEY = dataiku.default_project_key()
-    vars["standard"]["Test"] = request_body["name"]
+    vars["standard"]["Test"] = name
     project_handle.set_variables(vars)
     project = client.get_default_project()
     base_scenario = project.get_scenario('TEST_RUNSTEP')
@@ -32,7 +33,7 @@ def first_form():
     #                    mimetype='application/json')
     #response.headers["Content-Type"] = "text/json; charset=utf-8"
     base_scenario.run()
-    return {'status': 200, 'reason': json}
+    return {'status': 200, 'reason': name}
 
 
 def add_content_to_dataset(name, json):
