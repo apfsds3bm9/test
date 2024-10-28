@@ -28,12 +28,6 @@ def first_form():
     temp_scenario.run_and_wait()
     # remove your temporary scenario 
     temp_scenario.delete()
-    #resp = add_json_to_dataset(request_body)
-
-    #response = Response(response=json.dumps(resp),
-    #                    status=resp['status'],
-    #                    mimetype='application/json')
-    #response.headers["Content-Type"] = "text/json; charset=utf-8"
     base_scenario.run()
     return {'status': 200, 'reason': name}
 
