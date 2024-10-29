@@ -13,7 +13,7 @@ norway_new_car_sales_by_make_filtered_1_prepared_df = norway_new_car_sales_by_ma
 # TODO: Replace this part by your actual code that computes the output, as a Pandas dataframe
 # NB: DSS also supports other kinds of APIs for reading and writing data. Please see doc.
 
-Test_sum_and_mul_df = norway_new_car_sales_by_make_filtered_1_prepared_df # For this sample code, simply copy input to output
+Test_sum_and_mul_df = norway_new_car_sales_by_make_filtered_1_prepared_df.drop(columns = "NP", axis = 1) # For this sample code, simply copy input to output
 sum_int = int(dataiku.get_custom_variables()["sum"])
 mul_int = int(dataiku.get_custom_variables()["mul"])
 
