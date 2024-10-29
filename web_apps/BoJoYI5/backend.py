@@ -19,16 +19,16 @@ def first_form():
     vars = project_handle.get_variables()
     PROJECT_KEY = dataiku.default_project_key()
     vars["standard"]["Test"] = name
-    project_handle.set_variables(vars)
-    project = client.get_default_project()
-    base_scenario = project.get_scenario('TEST_RUNSTEP')
-    settings = base_scenario.get_settings()
-    temp_scenario = project.create_scenario('my_temp_scenario', 'step_based', {'params' : settings.data['params']})
+    #project_handle.set_variables(vars)
+    #project = client.get_default_project()
+    #base_scenario = project.get_scenario('TEST_RUNSTEP')
+    #settings = base_scenario.get_settings()
+    #temp_scenario = project.create_scenario('my_temp_scenario', 'step_based', {'params' : settings.data['params']})
     
-    temp_scenario.run_and_wait()
+    #temp_scenario.run_and_wait()
     # remove your temporary scenario 
-    temp_scenario.delete()
-    base_scenario.run()
+    #temp_scenario.delete()
+    #base_scenario.run()
     return {'status': 200, 'reason': name}
 
 
