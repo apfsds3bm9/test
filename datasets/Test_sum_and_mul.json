@@ -98,9 +98,7 @@
       {"name":"Make","type":"string"},
       {"name":"Quantity","type":"bigint"},
       {"name":"Pct","type":"double"},
-      {"name":"PhanVung","type":"string"},
-      {"name":"sum_Year","type":"bigint"},
-      {"name":"mul_Year","type":"bigint"}
+      {"name":"sum_AB","type":"bigint"}
     ],
     "userModified": false
   },
