@@ -14,11 +14,13 @@ def first_form():
     """
     request_body = request.get_json()
     name = request_body["name"]
+    email = request_body["email"]
     client = dataiku.api_client()
     project_handle = dataiku.api_client().get_project(dataiku.default_project_key())
     vars = project_handle.get_variables()
     PROJECT_KEY = dataiku.default_project_key()
-    vars["standard"]["Test"] = name
+    vars["standard"]["sum"] = name
+    vars["standard"]["mul"] = email
     #project_handle.set_variables(vars)
     #project = client.get_default_project()
     #base_scenario = project.get_scenario('TEST_RUNSTEP')
@@ -29,6 +31,6 @@ def first_form():
     # remove your temporary scenario 
     #temp_scenario.delete()
     #base_scenario.run()
-    return request_body#{'status': request_body, 'reason': name}
+    return {'status': request_body, 'reason_1': name, 'reason_2': email}
 
 
