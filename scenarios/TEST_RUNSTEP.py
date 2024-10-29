@@ -15,8 +15,8 @@ unique_makes = df['Make'].unique()
 # The Scenario object is the main handle from which you initiate steps
 scenario = Scenario()
 unique_makes = unique_makes[:6]
-vars['standard']["makes_list"] = str(unique_makes[0])
-project_handle.set_variables(vars)
+#vars['standard']["makes_list"] = str(unique_makes[0])
+@project_handle.set_variables(vars)
 step = BuildFlowItemsStepDefHelper(f"Data Preparation for {unique_makes[0]}") 
 step.add_dataset("norway_new_car_sales_by_make_filtered_1_prepared", project_key = project_key) 
 step.add_dataset("Test_sum_and_mul", project_key = project_key)
