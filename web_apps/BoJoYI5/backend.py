@@ -19,8 +19,8 @@ def first_form():
     project_handle = dataiku.api_client().get_project(dataiku.default_project_key())
     vars = project_handle.get_variables()
     PROJECT_KEY = dataiku.default_project_key()
-    vars["standard"]["sum"] = name
-    vars["standard"]["mul"] = email
+    vars["standard"]["sum"] = int(name)
+    vars["standard"]["mul"] = int(email)
     project_handle.set_variables(vars)
     #project = client.get_default_project()
     #base_scenario = project.get_scenario('TEST_RUNSTEP')
