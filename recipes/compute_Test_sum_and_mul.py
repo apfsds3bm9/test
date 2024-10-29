@@ -16,8 +16,10 @@ norway_new_car_sales_by_make_filtered_1_prepared_df = norway_new_car_sales_by_ma
 Test_sum_and_mul_df = norway_new_car_sales_by_make_filtered_1_prepared_df # For this sample code, simply copy input to output
 sum_int = int(dataiku.get_custom_variables()["sum"])
 mul_int = int(dataiku.get_custom_variables()["mul"])
-Test_sum_and_mul_df["sum_Year"] = Test_sum_and_mul_df["Year"] + sum_int
-Test_sum_and_mul_df["mul_Year"] = Test_sum_and_mul_df["Year"] * mul_int
+
+# Tính toán trực tiếp mà không cần vòng lặp hoặc các bước trung gian
+Test_sum_and_mul_df["sum_Year"] = Test_sum_and_mul_df["Year"].add(sum_int)
+Test_sum_and_mul_df["mul_Year"] = Test_sum_and_mul_df["Year"].mul(mul_int)
 # Write recipe outputs
 Test_sum_and_mul = dataiku.Dataset("Test_sum_and_mul")
 Test_sum_and_mul.write_with_schema(Test_sum_and_mul_df)
