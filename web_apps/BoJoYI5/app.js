@@ -26,10 +26,14 @@ function displayResponse(response) {
 function getName() {
     return $('#name').val()
 }
+function getEmail() {
+    return $('#email').val()
+}
 
 function makeRequestParam() {
     let data = {
-        "name": getName()
+        "name": getName(),
+        "email": getEmail(),
     }
     return {
         "method": 'POST',
