@@ -17,11 +17,11 @@ Test_sum_and_mul_df = norway_new_car_sales_by_make_filtered_1_prepared_df.drop(c
 Test_sum_and_mul_df.head()
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
-sum_int = int(dataiku.get_custom_variables()["sum"])
-mul_int = int(dataiku.get_custom_variables()["mul"])
+#sum_int = int(dataiku.get_custom_variables()["sum"])
+#mul_int = int(dataiku.get_custom_variables()["mul"])
 
 # Tính toán trực tiếp mà không cần vòng lặp hoặc các bước trung gian
-Test_sum_and_mul_df["sum_AB"] = sum_int + mul_int
+#Test_sum_and_mul_df["sum_AB"] = sum_int + mul_int
 # Write recipe outputs
 Test_sum_and_mul = dataiku.Dataset("Test_sum_and_mul")
 Test_sum_and_mul.write_with_schema(Test_sum_and_mul_df)
