@@ -22,7 +22,7 @@
     "main": {
       "items": [
         {
-          "ref": "norway_new_car_sales_by_make_filtered_1_prepared",
+          "ref": "norway_new_car_sales_by_make",
           "deps": []
         }
       ]
