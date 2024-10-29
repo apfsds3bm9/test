@@ -21,7 +21,7 @@ sum_int = int(dataiku.get_custom_variables()["sum"])
 mul_int = int(dataiku.get_custom_variables()["mul"])
 Test_sum_and_mul_df["sum_Year"] = Test_sum_and_mul_df["Year"] + sum_int
 Test_sum_and_mul_df["mul_Year"] = Test_sum_and_mul_df["Year"] * mul_int
-Test_sum_and_mul_df.head()
+
 
 # -------------------------------------------------------------------------------- NOTEBOOK-CELL: CODE
 # Write recipe outputs
